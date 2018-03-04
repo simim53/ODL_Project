@@ -38,7 +38,7 @@
     </plugins>
 </build>
   <parent>
-  	<version>0.0.3_SNAPSHOT</version>
+  	<version>0.0.4_SNAPSHOT</version>
   	<groupId>com.douillet</groupId>
   	<artifactId>odl_all</artifactId>
   	<relativePath>../odl_all</relativePath>
