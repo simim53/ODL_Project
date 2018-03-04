@@ -32,7 +32,7 @@
   	<dependency>
   		<groupId>com.douillet</groupId>
   		<artifactId>odl_service_api</artifactId>
-  		<version>0.0.4_SNAPSHOT</version>
+  		<version>0.0.5_SNAPSHOT</version>
   	</dependency>
   </dependencies>
   <build>
@@ -51,7 +51,7 @@
   </build>
   <parent>
   	<groupId>com.douillet</groupId>
-  	<version>0.0.4_SNAPSHOT</version>
+  	<version>0.0.5_SNAPSHOT</version>
   	<artifactId>odl_all</artifactId>
   	<relativePath>../odl_all</relativePath>
   </parent>

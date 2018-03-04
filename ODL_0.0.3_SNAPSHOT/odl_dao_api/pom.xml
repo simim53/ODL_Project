@@ -22,7 +22,7 @@
     <dependency>
     	<groupId>com.douillet</groupId>
     	<artifactId>odl_hibernate_data_lib</artifactId>
-    	<version>0.0.4_SNAPSHOT</version>
+    	<version>0.0.5_SNAPSHOT</version>
     </dependency>
          <dependency>
     <groupId>org.springframework</groupId>
@@ -46,7 +46,7 @@
   <parent>
   	<groupId>com.douillet</groupId>
   	<artifactId>odl_all</artifactId>
-  	<version>0.0.4_SNAPSHOT</version>
+  	<version>0.0.5_SNAPSHOT</version>
   	<relativePath>../odl_all</relativePath>
   </parent>
 </project>
