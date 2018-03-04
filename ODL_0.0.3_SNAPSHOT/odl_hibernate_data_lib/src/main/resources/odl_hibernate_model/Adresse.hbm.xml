@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 f?vr. 2018 14:48:39 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="odl_hibernate_model.Adresse" table="ADRESSES">
+        <id name="adresseID" type="int">
+            <column name="ADRESSEID" />
+            <generator class="identity" />
+        </id>
+        <property name="numero" type="int">
+            <column name="NUMERO" />
+        </property>
+        <property name="codepostal" type="int">
+            <column name="CODEPOSTAL" />
+        </property>
+        <property name="rue" type="java.lang.String">
+            <column name="RUE" />
+        </property>
+        <property name="ville" type="java.lang.String">
+            <column name="VILLE" />
+        </property>
+        <property name="pays" type="java.lang.String">
+            <column name="PAYS" />
+        </property>
+        <property name="complement" type="java.lang.String">
+            <column name="COMPLEMENT" />
+        </property>
+        
+        <many-to-one name="utilisateur" column="ADRESSEID" class="odl_hibernate_model.Utilisateur" insert="false" update="false"/>
+        
+     </class>
+</hibernate-mapping>
