@@ -14,6 +14,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import odl_hibernate_model.Adresse;
 import odl_hibernate_model.Utilisateur;
 
 
@@ -23,8 +26,13 @@ import odl_hibernate_model.Utilisateur;
  *
  */
 @Configuration
+@EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-@ComponentScan(basePackages = { "com.douillet.odl_service_api","com.douillet.odl_dao_api" })
+@ComponentScan(basePackages = { "com.douillet.odl_service_api",
+								"com.douillet.odl_dao_api",
+								"com.douillet.odl_service_core",
+								"com.douillet.odl_dao_core"})
+
 
 public class AppConfig {
 
@@ -37,8 +45,7 @@ public class AppConfig {
       dataSource.setDriverClassName(env.getProperty("db.driver"));
       dataSource.setUrl(env.getProperty("db.url"));
       dataSource.setUsername(env.getProperty("db.username"));
-
-      
+      dataSource.setPassword(env.getProperty("db.password"));
       return dataSource;
    }
 
@@ -53,7 +60,7 @@ public class AppConfig {
       props.put("hibernate.dialect",env.getProperty("hibernate.dialect"));
 
       factoryBean.setHibernateProperties(props);
-      factoryBean.setAnnotatedClasses(Utilisateur.class);
+      factoryBean.setAnnotatedClasses(Utilisateur.class,Adresse.class);
       return factoryBean;
    }
 

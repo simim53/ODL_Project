@@ -4,17 +4,20 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.douillet.odl_service_api.UtilisateurService;
+
 
 import odl_hibernate_model.Utilisateur;
 /**
  * Hello world!
  *
  */
-
+@Transactional
 public class App {
-	private static SessionFactory sessionFactory;
+	//private static SessionFactory sessionFactory;
+	
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 		
@@ -94,23 +97,19 @@ public class App {
 		context.refresh();
 	           
 
-	//	System.out.println("test1");
-	  //    UtilisateurService userService = context.getBean(UtilisateurService.class);
+		System.out.println("debut test");
+	    UtilisateurService userService = context.getBean(UtilisateurService.class);
+		
+	      List<Utilisateur> users = userService.getAllUtilisateur();
+	     for (Utilisateur user : users) {
+	         System.out.println("Id = "+user.getUserID());
+	         System.out.println("First Name = "+user.getLogin());
+	         System.out.println();
+	      }
 
-	      // Add Users
-	     
-	      // Get Users
+	     context.close();
 		
-	   //   List<Utilisateur> users = userService.getAllUtilisateur();
-	 //     for (Utilisateur user : users) {
-	     //    System.out.println("Id = "+user.getUserID());
-	    //     System.out.println("First Name = "+user.getLogin());
-	    //     System.out.println();
-	    //  }
-
-	  //    context.close();
-		
-		
+	 	System.out.println("fin test");
 		
 		
 	

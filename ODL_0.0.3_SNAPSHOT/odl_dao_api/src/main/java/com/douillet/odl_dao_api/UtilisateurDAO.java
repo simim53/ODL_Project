@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import odl_hibernate_model.Utilisateur;
 
-@Repository
-@Qualifier("UtilisateurDAO")
+
 public interface UtilisateurDAO {
 
 	/**
