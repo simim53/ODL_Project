@@ -2,9 +2,6 @@ package com.douillet.odl_dao_api;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
-
 import odl_hibernate_model.Utilisateur;
 
 

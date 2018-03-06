@@ -20,7 +20,7 @@ import com.douillet.odl_dao_api.UtilisateurDAO;
 import odl_hibernate_model.Utilisateur;
 
 @Repository
-@Transactional
+@Transactional(readOnly=true)
 public class UtilisateurDaoHibernate implements UtilisateurDAO {
 
 	@Autowired(required = true)

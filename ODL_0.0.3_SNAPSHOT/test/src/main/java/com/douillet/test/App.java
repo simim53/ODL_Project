@@ -2,7 +2,6 @@ package com.douillet.test;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -104,6 +103,7 @@ public class App {
 	     for (Utilisateur user : users) {
 	         System.out.println("Id = "+user.getUserID());
 	         System.out.println("First Name = "+user.getLogin());
+	         System.out.println("adresse = "+   (user.getAdresse() != null ? user.getAdresse().getVille() : "null"));   
 	         System.out.println();
 	      }
 
