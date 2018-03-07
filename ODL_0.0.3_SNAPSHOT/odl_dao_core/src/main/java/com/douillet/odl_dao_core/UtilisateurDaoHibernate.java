@@ -7,12 +7,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.douillet.odl_dao_api.UtilisateurDAO;
@@ -35,7 +32,7 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 		return sessionFactory.getCurrentSession().get(Utilisateur.class, utilisateurId);
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public List<Utilisateur> getUtilisateurs() {
 
