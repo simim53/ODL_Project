@@ -4,7 +4,7 @@
 
 	<groupId>com.douillet</groupId>
 	<artifactId>odl_all</artifactId>
-	<version>0.0.5_SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>odl_all</name>
@@ -25,16 +25,15 @@
 		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
 		
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
+				<version>2.3.2</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

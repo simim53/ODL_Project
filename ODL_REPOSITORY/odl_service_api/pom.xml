@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_hibernate_data_lib</artifactId>
-			<version>0.0.5_SNAPSHOT</version>
+			<version>0.0.6-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
@@ -42,7 +42,7 @@
 		</plugins>
 	</build>
 	<parent>
-		<version>0.0.5_SNAPSHOT</version>
+		<version>0.0.6-SNAPSHOT</version>
 		<groupId>com.douillet</groupId>
 		<artifactId>odl_all</artifactId>
 		<relativePath>../odl_all</relativePath>
