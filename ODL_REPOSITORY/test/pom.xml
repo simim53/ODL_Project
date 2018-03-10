@@ -49,6 +49,18 @@
 			<artifactId>odl_hibernate_data_lib</artifactId>
 			<version>0.0.6-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.douillet</groupId>
+			<artifactId>odl_dao_api</artifactId>
+			<version>0.0.6-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.douillet</groupId>
+			<artifactId>odl_dao_core</artifactId>
+			<version>0.0.6-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
