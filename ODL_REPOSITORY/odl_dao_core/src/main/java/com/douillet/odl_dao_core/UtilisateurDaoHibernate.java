@@ -16,9 +16,10 @@ import com.douillet.odl_dao_api.UtilisateurDAO;
 
 import odl_hibernate_model.Utilisateur;
 
-@Repository
-@Transactional(readOnly=true)
+@Repository("UtilisateurDAO")
+@Transactional
 public class UtilisateurDaoHibernate implements UtilisateurDAO {
+	
 
 	@Autowired(required = true)
 	private SessionFactory sessionFactory;

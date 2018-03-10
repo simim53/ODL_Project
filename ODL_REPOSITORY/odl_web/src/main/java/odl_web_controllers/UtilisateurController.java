@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.douillet.odl_service_api.UtilisateurService;
  
 
- 
+
 @Controller
-@RequestMapping("/utilisateur-module")
 public class UtilisateurController
 {
+	
     @Autowired
     UtilisateurService serviceutilisateur;
+    
+
  
     @RequestMapping(value = "/getAllUtilisateurs", method = RequestMethod.GET)
     public String getAllUtilisateurs(Model model)
@@ -23,4 +25,6 @@ public class UtilisateurController
         model.addAttribute("utilisateurs", serviceutilisateur.getAllUtilisateur());
         return "utilisateurListDisplay";
     }
+    
+    
 }

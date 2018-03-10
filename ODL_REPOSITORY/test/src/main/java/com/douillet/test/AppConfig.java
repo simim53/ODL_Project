@@ -25,6 +25,7 @@ import odl_hibernate_model.Utilisateur;
  * @author sdouillet
  *
  */
+
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")

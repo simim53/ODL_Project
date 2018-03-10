@@ -13,7 +13,8 @@ import odl_hibernate_model.Utilisateur;
 
 
  
-@Service
+@Service("UtilisateurService")
+@Transactional
 public class UtilisateurServiceImpl implements UtilisateurService {
  
 	@Autowired
