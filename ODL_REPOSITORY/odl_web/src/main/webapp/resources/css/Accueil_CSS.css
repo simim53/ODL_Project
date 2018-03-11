@@ -2,16 +2,51 @@
 .titremenu {
 	clear: none;
 	float: none;
+	text-transform: capitalize;
 }
 .elementsmenuprinc {
 	float: left;
-	margin-right: 2%;
+	text-transform: none;
+	border-color: #000000;
+	border-style: solid;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	background-color: #767676;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 10px;
 }
+.barremuneprincipale div .titremenu {
+	text-align: center;
+	color: #000000;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 55px;
+	text-shadow: 0 0px;
+	font-weight: normal;
+	padding-bottom: 0px;
+	margin-bottom: -19px;
+}
+
+
 .divmenuprinc {
-	margin-right: auto;
+	margin-right: 90%;
 	float: left;
-	width: 100%;
+	width: 98%;
+	list-style: none;
+	background-color: #0B0A0B;
 }
+
+.barremuneprincipale div .divmenucon {
+	list-style: none;
+	background-color: #020101;
+}
+.divmenuprinc .elementsmenuprinc a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
 .elementsmenucon {
 	float: right;
 	margin-left: 2%;
