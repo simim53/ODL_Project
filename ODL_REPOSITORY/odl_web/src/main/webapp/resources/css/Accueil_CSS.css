@@ -1,0 +1,31 @@
+@charset "utf-8";
+.titremenu {
+	clear: none;
+	float: none;
+}
+.elementsmenuprinc {
+	float: left;
+	margin-right: 2%;
+}
+.divmenuprinc {
+	margin-right: auto;
+	float: left;
+	width: 100%;
+}
+.elementsmenucon {
+	float: right;
+	margin-left: 2%;
+}
+.barremuneprincipale {
+	float: none;
+}
+.divbbienvenue {
+	width: 100%;
+}
+.divbtitre {
+	height: 100%;
+	float: none;
+	clear: none;
+
+
+}

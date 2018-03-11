@@ -29,7 +29,7 @@ import odl_hibernate_model.Utilisateur;
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
 @ComponentScan(basePackages = { "com.douillet.odl_dao_core", "com.douillet.odl_dao_api",
-		"com.douillet.odl_service_core", "com.douillet.odl_service_api", "com.douillet.odl_web","odl_web_controllers" })
+		"com.douillet.odl_service_core", "com.douillet.odl_service_api", "com.douillet.odl_web","odl_web_controllers","odl_web_configuration" })
 
 public class AppConfig {
 
