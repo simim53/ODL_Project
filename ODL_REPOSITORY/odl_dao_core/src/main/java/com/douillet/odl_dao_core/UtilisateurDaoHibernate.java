@@ -48,20 +48,25 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 
 	@Override
 	public void updateUtilisateur(Utilisateur utilisateur) {
-		// TODO Auto-generated method stub
+				
+		sessionFactory.getCurrentSession().update(utilisateur);
 
 	}
 
 	@Override
 	public void addUtilisateur(Utilisateur utilisateur) {
-		// TODO Auto-generated method stub
+		
+		sessionFactory.getCurrentSession().persist(utilisateur);
 
 	}
 
 	@Override
 	public void deleteUtilisateur(Utilisateur utilisateur) {
-		// TODO Auto-generated method stub
 
+		sessionFactory.getCurrentSession().delete(utilisateur);
+		
+		//to do :  supprimer l'adresse
+		
 	}
 
 }
