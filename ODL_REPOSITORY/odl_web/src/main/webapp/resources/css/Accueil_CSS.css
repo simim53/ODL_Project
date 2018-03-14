@@ -1,66 +1,69 @@
-@charset "utf-8";
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+	background-color: rgba(28,28,32,0.81) !important;
+}
+.navbar-nav.mr-auto .nav-item .nav-link {
+	color: rgba(255,255,255,1.00);
+}
+
+.navbar-toggler{
+	background-color: rgba(255,255,255,1.00)!important;
+}
+
 .titremenu {
-	clear: none;
-	float: none;
-	text-transform: capitalize;
-}
-.elementsmenuprinc {
-	float: left;
-	text-transform: none;
-	border-color: #000000;
-	border-style: solid;
-	padding-left: 5px;
-	padding-top: 5px;
-	padding-right: 5px;
-	padding-bottom: 5px;
-	background-color: #767676;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	border-radius: 10px;
-}
-.barremuneprincipale div .titremenu {
-	text-align: center;
-	color: #000000;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-	font-size: 55px;
-	text-shadow: 0 0px;
-	font-weight: normal;
-	padding-bottom: 0px;
-	margin-bottom: -19px;
+	text-align: center;
 }
 
-
-.divmenuprinc {
-	margin-right: 90%;
-	float: left;
-	width: 98%;
-	list-style: none;
-	background-color: #0B0A0B;
+.navbar-nav.mr-auto .nav-item{
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: thin solid rgba(255,255,255,1.00);
 }
 
-.barremuneprincipale div .divmenucon {
-	list-style: none;
-	background-color: #020101;
-}
-.divmenuprinc .elementsmenuprinc a {
-	color: #FFFFFF;
-	text-decoration: none;
+.navbar-nav.mr-auto .nav-item:not(:last-child){
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-
-.elementsmenucon {
-	float: right;
-	margin-left: 2%;
+.navbar-nav.mr-auto .nav-item:hover{
+	background-color: rgba(40,27,226,0.81);
+	border-radius: 4px;
 }
-.barremuneprincipale {
-	float: none;
+#navbarSupportedContent .navbar-nav.navbar-right .nav-item {
+	padding-right: 20px;
 }
-.divbbienvenue {
-	width: 100%;
+#navbarSupportedContent .navbar-nav.navbar-right .dropdown.order-1 {
+	color: rgba(255,255,255,1.00)!important;	
 }
-.divbtitre {
-	height: 100%;
-	float: none;
-	clear: none;
+#dropdownMenu1{
+	color: rgba(251,246,246,1.00);
+	
+}
+#formcon{
+	
+	-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,0.49);
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.49);
+}
 
-
+#dropdownMenu1:hover{
+	background-color: rgba(40,27,226,0.81);
+	
+}
+#inscription:focus{
+	background-color: rgba(5,163,35,1.00);
+	border-color: rgba(5,163,35,1.00);
+	-webkit-box-shadow: 0px 0px;
+	box-shadow: 0px 0px;
+}
+#inscription:hover{
+	background-color: rgba(5,163,35,1.00);
+	border-color: rgba(5,163,35,1.00);
+}
+#inscription{
+	background-color: rgba(25,202,11,1.00);
+	border-color: rgba(25,202,11,1.00);
+}
+#footerAccueil{
+	text-align: center;
+	font-size: 15px
 }
