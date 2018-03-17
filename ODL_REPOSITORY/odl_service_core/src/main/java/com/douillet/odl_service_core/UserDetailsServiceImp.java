@@ -1,4 +1,4 @@
-package odl_web_security;
+package com.douillet.odl_service_core;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User.UserBuilder;
@@ -8,13 +8,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.douillet.odl_dao_api.UtilisateurDAO;
+
 import odl_hibernate_model.Utilisateur;
 
 @Service("userDetailsService")
 public class UserDetailsServiceImp implements UserDetailsService {
 
 		@Autowired
-		 private UserDetailsDao userDetailsDao;
+		 private UtilisateurDAO userDetailsDao;
 
 
 	  @Transactional(readOnly = true)

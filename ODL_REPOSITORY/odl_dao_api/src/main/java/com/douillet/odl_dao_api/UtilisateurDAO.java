@@ -33,6 +33,8 @@ public interface UtilisateurDAO {
 	 * @param utilisateur
 	 */
 	public void deleteUtilisateur(Utilisateur utilisateur);
+	
+	public Utilisateur findUserByUsername(String username);
 
 	
 }
