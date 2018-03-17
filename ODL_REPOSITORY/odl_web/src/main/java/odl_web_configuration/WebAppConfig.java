@@ -3,7 +3,6 @@ package odl_web_configuration;
 import java.util.Properties;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,10 +27,19 @@ import odl_hibernate_model.Utilisateur;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-@ComponentScan(basePackages = { "com.douillet.odl_dao_core", "com.douillet.odl_dao_api",
-		"com.douillet.odl_service_core", "com.douillet.odl_service_api", "com.douillet.odl_web","odl_web_controllers","odl_web_configuration" })
+@ComponentScan(basePackages = { 
+		"odl_hibernate_model",
+		"com.douillet.odl_dao_core",
+		"com.douillet.odl_dao_api",
+		"com.douillet.odl_service_core",
+		"com.douillet.odl_service_api",
+		"com.douillet.odl_web",
+		"odl_web_controllers",
+		"odl_web_configuration",
+		"odl_web_initializer",
+		"odl_web_security" })
 
-public class AppConfig {
+public class WebAppConfig {
 
 	@Autowired
 	private Environment env;
@@ -61,12 +69,13 @@ public class AppConfig {
 		return factoryBean;
 	}
 
-	@Autowired
-	@Bean(name = "transactionManager")
-	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-		return transactionManager;
-	}
+	
+	@Bean
+	 public HibernateTransactionManager getTransactionManager() {
+	    HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+	    transactionManager.setSessionFactory(getSessionFactory().getObject());
+	    return transactionManager;
+	  }
 	
 
 	@Bean

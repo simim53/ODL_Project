@@ -5,6 +5,7 @@ import java.util.List;
 import odl_hibernate_model.Utilisateur;
 
 
+
 public interface UtilisateurDAO {
 
 	/**
@@ -33,4 +34,5 @@ public interface UtilisateurDAO {
 	 */
 	public void deleteUtilisateur(Utilisateur utilisateur);
 
+	
 }
