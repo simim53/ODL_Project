@@ -24,7 +24,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 		ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
 
 		servlet.setLoadOnStartup(1);
-		servlet.addMapping("/login");
+		servlet.addMapping("/index");
 	}
 
 }

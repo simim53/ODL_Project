@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 class IndexController {
 	
-	  @GetMapping("/")
+	  @GetMapping("/login")
 	  public String index(Model model, Principal principal) {
 	    model.addAttribute("message", "vous êtes maintenant connecté en tant que : " + principal.getName() );
-	    return "index";
+	    return "utilisateurListDisplay";
 	  }
 
 }

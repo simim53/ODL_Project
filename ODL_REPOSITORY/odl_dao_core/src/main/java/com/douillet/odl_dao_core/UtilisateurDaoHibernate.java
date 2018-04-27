@@ -20,7 +20,6 @@ import odl_hibernate_model.Utilisateur;
 @Repository("UtilisateurDAO")
 @Transactional
 public class UtilisateurDaoHibernate implements UtilisateurDAO {
-	
 
 	@Autowired(required = true)
 	private SessionFactory sessionFactory;
@@ -34,7 +33,6 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 		return sessionFactory.getCurrentSession().get(Utilisateur.class, utilisateurId);
 	}
 
-	
 	@Override
 	public List<Utilisateur> getUtilisateurs() {
 
@@ -49,14 +47,14 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 
 	@Override
 	public void updateUtilisateur(Utilisateur utilisateur) {
-				
+
 		sessionFactory.getCurrentSession().update(utilisateur);
 
 	}
 
 	@Override
 	public void addUtilisateur(Utilisateur utilisateur) {
-		
+
 		sessionFactory.getCurrentSession().persist(utilisateur);
 
 	}
@@ -65,24 +63,21 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 	public void deleteUtilisateur(Utilisateur utilisateur) {
 
 		sessionFactory.getCurrentSession().delete(utilisateur);
-		
-		//to do :  supprimer l'adresse
-		
-	}
-	
-	@Override
-	  public Utilisateur findUserByUsername(String username) {
-	   
-			CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
-			CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
-			Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
-			cq.select(rootEntry).where(cb.equal(rootEntry.get("login"), username));
-			Query<Utilisateur> q = sessionFactory.getCurrentSession().createQuery(cq);
-			
-			Utilisateur user = q.getSingleResult();
-		  	  
-		  return user;
-	  }
 
+		// to do : supprimer l'adresse
+
+	}
+
+	@Override
+	public Utilisateur findUserByUsername(String username) {
+
+		CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
+		CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
+		Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
+		cq.select(rootEntry).where(cb.equal(rootEntry.get("login"), username));
+		Query<Utilisateur> q = sessionFactory.getCurrentSession().createQuery(cq);
+
+		return q.getSingleResult();
+	}
 
 }
