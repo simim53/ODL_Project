@@ -18,6 +18,8 @@ public interface UtilisateurService
     
     public void deleteUtilisateur (Utilisateur utilisateur);
     
+    public Utilisateur findUserByUsername(String login);
+    
     
     
 }

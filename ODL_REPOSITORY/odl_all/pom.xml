@@ -11,16 +11,19 @@
 
 
 	<properties>
-	
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate.version>5.2.13.Final</hibernate.version>
 		<spring.version> 5.0.4.RELEASE</spring.version>
 		<mssqlserver.driver.version>5.1.4</mssqlserver.driver.version>
 
+		<jackson-databind.version>2.9.6</jackson-databind.version>
+		<jackson-annotations.version>2.9.6</jackson-annotations.version>
+
 		<org.apache.commons.version>2.2.0</org.apache.commons.version>
 		<spring-boot-starter.version>1.5.10.RELEASE</spring-boot-starter.version>
 		<spring-security.version>5.0.3.RELEASE</spring-security.version>
-	
+
 
 		<javax.servlet.version>1.2</javax.servlet.version>
 		<javax.servlet.jsp.jstl.version>1.2.1</javax.servlet.jsp.jstl.version>
@@ -31,7 +34,9 @@
 		<junit.version>3.8.1</junit.version>
 		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
 		<maven-war-plugin.version>3.2.0</maven-war-plugin.version>
-		
+
+
+
 	</properties>
 	<build>
 		<plugins>

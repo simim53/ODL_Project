@@ -50,4 +50,13 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		userdao.deleteUtilisateur(utilisateur);
 
 	}
+	
+	@Override
+	@Transactional
+	public Utilisateur findUserByUsername(String login){
+		return userdao.findUserByUsername(login);
+
+	}
+	
+	
 }

@@ -1,20 +1,31 @@
 package odl_web_configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 
 import com.douillet.odl_service_core.UserDetailsServiceImp;
+
+import odl_web_security.RestUnauthorizedEntryPoint;
 
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+@ComponentScan(basePackages = {"odl_web_security"})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	 @Bean
@@ -27,11 +38,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		  return new BCryptPasswordEncoder();
 	  }
 	  
+	  
+	  @Autowired
+	  private AuthenticationFailureHandler restAuthenticationFailureHandler;
+	  
+	  @Autowired
+	  private AuthenticationSuccessHandler restAuthenticationSuccessHandler;
+	  
+	  @Autowired
+	   private RestUnauthorizedEntryPoint restAuthenticationEntryPoint;
+	  
+	  @Autowired
+	  private AccessDeniedHandler restAccessDeniedHandler;
+	  
 	  @Override
 	  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		  auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
 	  }
-
+	  
+	  @Autowired
+	    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	        auth.userDetailsService(userDetailsService());
+	    }
+/*
 	  @Override
 	  protected void configure(HttpSecurity http) throws Exception {
 		  http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
@@ -47,6 +76,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
               .and()
           .formLogin()
               .loginPage("/login")
+              .usernameParameter("username")
+              .passwordParameter("password")
               .permitAll()
               .and()
           .logout()                                    
@@ -55,8 +86,57 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		  
 		  
 	  }
+*/
+	  
 	  @Override
-	    public void configure(WebSecurity web) throws Exception {
-	        web.ignoring().antMatchers("/resources/**").anyRequest();
-	    }
+	  protected void configure(HttpSecurity http) throws Exception {
+		  
+		  http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
+		    .and()
+		    .authorizeRequests().antMatchers("resources/**","/css/**").permitAll()
+		    .and()
+		    .csrf().disable();
+		  
+	   http
+	    .headers().disable()
+	    .csrf().disable()
+	    .authorizeRequests()
+	   //  .antMatchers("/v2/api-docs").hasAnyAuthority("admin")
+	   //  .antMatchers("/users/**").hasAnyAuthority("admin")
+	     .anyRequest().authenticated()
+	     .and()
+	    .exceptionHandling()
+	     .authenticationEntryPoint(restAuthenticationEntryPoint)
+	     .accessDeniedHandler(restAccessDeniedHandler)
+	     .and()
+	    .formLogin()
+	     .loginProcessingUrl("/login")
+	     .loginPage("/index")
+	     .successHandler(restAuthenticationSuccessHandler)
+	     .failureHandler(restAuthenticationFailureHandler)
+	     .usernameParameter("username")
+	     .passwordParameter("password")
+	     .permitAll()
+	     .and()
+	    .logout()
+	     .logoutUrl("/logout")
+	     .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
+	     .deleteCookies("JSESSIONID")
+	     .permitAll();
+	   //  .and()
+	   // .rememberMe()
+	   //  .rememberMeServices(rememberMeServices)
+	  //   .key(REMEMBER_ME_KEY)
+	  //   .and();
+	  }
+	 
+	  
+	  
+	  
+	  
+	  @Override
+	  public void configure(WebSecurity web) throws Exception {
+	   web.ignoring().antMatchers("/resources/**", "/index.html", "/login.html",
+	    "/partials/**", "/", "/error/**");
+	  }
 }

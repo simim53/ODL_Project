@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * HIBERNATE table USERS with annotations
  *
@@ -64,6 +66,7 @@ public class Utilisateur implements java.io.Serializable {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ADRESSEID")
+	@JsonManagedReference
 	private Adresse adresse;
 
 	public Utilisateur(Adresse adresse, int userID, int age, String nom, String prenom, String telephonNumber,
