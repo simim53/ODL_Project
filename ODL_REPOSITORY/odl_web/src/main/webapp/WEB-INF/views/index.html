@@ -24,7 +24,7 @@
 
 <body ng-app="indexApp">
 
-	<div ng-controller="errors">
+	<div ng-controller="message">
 		<alert type="danger">{{$root.error}}</alert>
 	</div>
 
@@ -69,11 +69,11 @@
 							<li class="p-3" id="formcon">
 
 
-								<div ng-controller="navigation" class="container">
+								
 
 
 									<form role="form" ng-submit="onLogin()"
-										ng-controller="navigation">
+										ng-controller="identification">
 										<div class="form-group">
 											<input id="loginInput" placeholder="Identifiant"
 												class="form-control form-control-sm" type="text"
@@ -97,8 +97,6 @@
 
 
 
-
-								</div>
 
 
 

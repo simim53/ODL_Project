@@ -4,7 +4,7 @@ app.config([ '$qProvider', function($qProvider) {
 	$qProvider.errorOnUnhandledRejections(false);
 } ]);
 
-app.controller('navigation', function($scope,$rootScope, $http) {
+app.controller('identification', function($scope,$rootScope, $http) {
 	$scope.onLogin = function(login) {
 		var data = 'username='
 				+ encodeURIComponent($scope.credentials.username)
@@ -20,12 +20,13 @@ app.controller('navigation', function($scope,$rootScope, $http) {
 			$rootScope.error = 'vous etes connecte en tant que : '+ response.data.login;
 		}, function errorCallback(response) {
 			console.log("Authentification ERROR : " + response.data.message);
+			$rootScope.error = 'identifiants incorrects';
 		});
 
 	}
 });
 
 
-app.controller("errors", function($scope,$rootScope) {
+app.controller("message", function($scope,$rootScope) {
 	$rootScope.error = app.errorMessage ;	
 });
