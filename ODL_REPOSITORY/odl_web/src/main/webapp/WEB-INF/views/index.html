@@ -2,10 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" name="viewport"
+	content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-
 	<title>Projet ODL - Bienvenue</title>
 	<base href=".">
 		<script type="text/javascript" src="resources/lib/angular/angular.js"></script>
@@ -14,20 +13,26 @@
 		<script type="text/javascript"
 			src="resources/lib/bootstrap/bootstrap.min.js"></script>
 
-		<script type="text/javascript" src="resources/js/login.js"></script>
+		<script type="text/javascript" src="resources/js/controllers/login.js"></script>
 
 		<link href="resources/css/bootstrap/bootstrap.css" rel="stylesheet"
 			type="text/css">
 			<link href="resources/css/Accueil_CSS.css" rel="stylesheet"
 				type="text/css">
+				<link rel="stylesheet"
+					href="resources/lib/fontawesome/css/all.css">
 </head>
 
 <body ng-app="indexApp">
 
-	<div ng-controller="message">
-		<alert type="danger">{{$root.error}}</alert>
+	<div>
+		<alert type="danger">{{$root.message}}</alert>
 	</div>
+	<!--  
+<div ng-controller ='myMenuController'>{{$user}}</div>
 
+
+-->
 	<div>
 		<!-- 
 		<h1 class="text-center justify-content-center" id="titrepageacceuil">Projet
@@ -61,39 +66,55 @@
 								role="presentation" href="#" class="dropdown-item">element</a>
 						</div></li>
 				</ul>
-				<span class="navbar-text actions">
-					<li class="dropdown order-1" id="connex"><a
+				<div style="text-align:center;">
+				<span class="navbar-text actions" style="text-align:center;">
+					<li class="dropdown order-1" id="connex" ><a
 						data-toggle="dropdown" aria-expanded="false" href="#"
 						class="dropdown-toggle nav-link dropdown-toggle">Connexion</a>
 						<ul class="dropdown-menu dropdown-menu-right mt-1">
 							<li class="p-3" id="formcon">
 
-
-								
-
-
-									<form role="form" ng-submit="onLogin()"
-										ng-controller="identification">
-										<div class="form-group">
+								<form role="form" ng-submit="onLogin()"
+									ng-controller="identification">
+							
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text"><i
+													class="fa fa-user"></i></span>
+											</div>
 											<input id="loginInput" placeholder="Identifiant"
 												class="form-control form-control-sm" type="text"
 												name="username" ng-model="credentials.username" required>
 										</div>
-										<div class="form-group">
-											<input id="passwordInput" placeholder="Mot de passe"
-												class="form-control form-control-sm" type="password"
-												name="password" ng-model="credentials.password" required>
-										</div>
-										<div class="form-group">
-											<button class="btn btn-light action-button" role="button"
-												style="background-color: #566fc6;" id="btnseconnecter"
-												type="submit">Se connecter</button>
-										</div>
-										<div class="form-group text-xs-center">
-											<small><a href="#">Mot de passe oublié?</a></small>
-										</div>
 
-									</form>
+
+
+									</div>
+									<div class="form-group">
+									
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text"><i
+													class="fa fa-key"></i></span>
+											</div>
+											<input id="passwordInput" placeholder="Mot de passe"
+											class="form-control form-control-sm" type="password"
+											name="password" ng-model="credentials.password" required>
+										</div>
+																	
+										
+									</div>
+									<div class="form-group" style="text-align:center;">
+										<button class="btn btn-light action-button" role="button"
+											style="background-color: #566fc6;" id="btnseconnecter"
+											type="submit">Se connecter</button>
+									</div>
+									<div class="form-group text-xs-center" style="text-align:center;">
+										<small><a href="#">Mot de passe oublié?</a></small>
+									</div>
+
+								</form>
 
 
 
@@ -104,6 +125,8 @@
 
 
 							</li>
+							
+							
 
 							<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
 
@@ -113,6 +136,7 @@
 						</ul></li> <a class="btn btn-light action-button" role="button" href="#"
 					style="background-color: #566fc6;">Inscription</a>
 				</span>
+			</div>
 			</div>
 		</div>
 		</nav>

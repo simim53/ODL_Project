@@ -91,7 +91,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	  @Override
 	  protected void configure(HttpSecurity http) throws Exception {
 		  
-		  http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
+		  http.authorizeRequests().anyRequest().permitAll()
 		    .and()
 		    .authorizeRequests().antMatchers("resources/**","/css/**").permitAll()
 		    .and()
@@ -111,7 +111,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	     .and()
 	    .formLogin()
 	     .loginProcessingUrl("/login")
-	     .loginPage("/index")
+	     .loginPage("/index").permitAll()
 	     .successHandler(restAuthenticationSuccessHandler)
 	     .failureHandler(restAuthenticationFailureHandler)
 	     .usernameParameter("username")
@@ -136,7 +136,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	  
 	  @Override
 	  public void configure(WebSecurity web) throws Exception {
-	   web.ignoring().antMatchers("/resources/**", "/index.html", "/login.html",
+	   web.ignoring().antMatchers("/resources/**", "/index.html",
 	    "/partials/**", "/", "/error/**");
 	  }
 }

@@ -1,3 +1,13 @@
+#formcon{
+    width: 220px;
+}
+
+.input-group-text{
+    color: white;
+    background-color: #566fc6;
+}
+
+
 .footer-basic {
 	text-align: center;
 	padding-top: 10px;
@@ -143,7 +153,9 @@
 		padding-bottom: 3px;
 	}
 
-
+#formcon{
+    width: 220px;
+}
 
 
 
