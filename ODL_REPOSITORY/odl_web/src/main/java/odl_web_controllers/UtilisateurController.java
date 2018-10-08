@@ -32,7 +32,7 @@ public class UtilisateurController
         return "utilisateurListDisplay";
     }
     
-    @RequestMapping(value = "*/getSession", method = RequestMethod.GET, headers="Accept=*/*")
+    @RequestMapping(value = "/getSession", method = RequestMethod.GET, headers="Accept=*/*")
     public String getSession(HttpSession session) {
     	//Utilisateur user = (Utilisateur) session.getAttribute("utilisateur");
       

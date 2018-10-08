@@ -1,11 +1,13 @@
-var app = angular.module("indexApp", []);
+var app = angular.module("indexApp",['ngAnimate','ui.bootstrap']);
 
 app.config([ '$qProvider', function($qProvider) {
 	$qProvider.errorOnUnhandledRejections(false);
 } ]);
 
+//Controller identification utilisateur
 app.controller('identification', function($scope,$rootScope, $http) {
 	$scope.onLogin = function(login) {
+		$rootScope.alerts = [];
 		var data = 'username='
 				+ encodeURIComponent($scope.credentials.username)
 				+ '&password='
@@ -16,17 +18,24 @@ app.controller('identification', function($scope,$rootScope, $http) {
 				'Content-Type' : 'application/x-www-form-urlencoded'
 			}
 		}).then(function successCallback(response) {
+			$rootScope.hideconn = "true";
 			console.log("Authentification SUCCESS");
-			$rootScope.message = 'vous etes connecte en tant que : '+ response.data.login;
+			$rootScope.alerts.push({type: 'success',msg: 'vous êtes maintenant connecté en tant que : '+ response.data.login});
+			
+			
 		}, function errorCallback(response) {
+			$rootScope.hideconn = "true";
 			console.log("Authentification ERROR : " + response.data.message);
-			$rootScope.message = 'identifiants incorrects';
+			$rootScope.alerts.push({type: 'danger',msg: 'Erreur : Identifiants incorrects ( '+response.data.message +' )' });
+					
 		});
 
 	}
+		
 });
 
-app.controller('myMenuController',function($scope, $http){
+//Controller valide session
+app.controller('myMenuController',function($scope,$rootScope, $http){
 
     getSessionInfo = function () {
         $http.get('/odl_web/getSession')
@@ -38,4 +47,14 @@ app.controller('myMenuController',function($scope, $http){
     getSessionInfo();
 
 });
+
+// Controller message informations
+app.controller('messagealerte',function($scope,$rootScope, $http){
+	
+	$rootScope.closeAlert = function(index) {
+		$rootScope.alerts = [];				
+	};
+
+});
+
 
