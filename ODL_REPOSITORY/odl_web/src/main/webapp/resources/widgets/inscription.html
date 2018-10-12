@@ -1,107 +1,122 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
-	
-	<!-- Modal Inscription -->
-<div class="modal fade" id="ModalInscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Inscription</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      
-      
-      
-      
-      	<div class="container">
-			<div class="row main">
-				<div class="panel-heading">
-	               
-	            </div> 
-				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
-						
-						
-						
-						<div class="input-group">
-							<label for="name" class="cols-sm-2 control-label">Nom</label>
-							<div class="cols-sm-10">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-user"></i></span>
+
+
+
+<!-- Modal Inscription -->
+<div class="modal fade" id="ModalInscription" tabindex="-1"
+	role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="exampleModalLabel">Inscription</h2>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+
+
+
+				<div class="container">
+					<div class="row main">
+						<div class="panel-heading"></div>
+						<div class="main-login main-center">
+							<form class="form-horizontal" method="post" action="#">
+
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Nom</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-user"
+												aria-hidden="true"></i></span> <input type="text"
+												class="form-control" name="nom" placeholder="Nom" />
+										</div>
 									</div>
-									<input type="text" class="form-control form-control-sm" name="name" id="name"  placeholder="Nom"/>
 								</div>
-							</div>
-						
-						
-											
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Prénom</label>
-							<div class="cols-sm-10">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" placeholder="Prénom"/>
+
+
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Prénom</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-user"
+												aria-hidden="true"></i></span> <input type="text"
+												class="form-control" name="prenom" placeholder="Prénom" />
+										</div>
+									</div>
 								</div>
-							</div>
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Email</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-envelope" aria-hidden="true"></i></span> <input
+												type="text" class="form-control" name="email"
+												placeholder="Email" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Identifiant</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-users"
+												aria-hidden="true"></i></span> <input type="text"
+												class="form-control" name="identifiant"
+												placeholder="Identifiant" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Mot
+										de Passe</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-lock"
+												aria-hidden="true"></i></span> <input type="text"
+												class="form-control" name="motdepasse"
+												placeholder="Mot de Passe" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Confirmation</label>
+									<div class="cols-sm-10">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-lock"
+												aria-hidden="true"></i></span> <input type="text"
+												class="form-control" name="confirmation"
+												placeholder="Confirmation" />
+										</div>
+									</div>
+								</div>
+
+
+							</form>
 						</div>
+					</div>
 
+					<div class="g-recaptcha"
+						data-sitekey="6Le3vXQUAAAAAJKXx8so_-OpDMzd-TThGHy6nnXV"></div>
 
-
-
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Email"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Identifiant</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Identifiant"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Mot de Passe</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Mot de passe"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirmation</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Mot de passe"/>
-								</div>
-							</div>
-						</div>						
-					</form>
 				</div>
 			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				<button type="button" class="btn btn-primary">Créer mon
+					compte</button>
+			</div>
 		</div>
-            </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Créer mon compte</button>
-      </div>
-    </div>
-  </div>
-    </div>
+	</div>
+</div>
 
 </html>
-	 
