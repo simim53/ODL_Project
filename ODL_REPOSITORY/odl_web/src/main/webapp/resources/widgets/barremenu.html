@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	
+	<div>
+		<!-- 
+		<h1 class="text-center justify-content-center" id="titrepageacceuil">Projet
+			ODL</h1>
+	 -->
+		<nav
+			class="navbar navbar-light navbar-expand-md navigation-clean-button">
+		<div class="container">
+			<a href="#" class="navbar-brand">Menu :</a>
+			<button data-toggle="collapse" data-target="#navcol-1"
+				class="navbar-toggler">
+				<span class="sr-only">Toggle navigation</span><span
+					class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navcol-1">
+				<ul class="nav navbar-nav mr-auto">
+					<li role="presentation" class="nav-item"><a href="#"
+						class="nav-link active">Accueil</a></li>
+					<li role="presentation" class="nav-item"><a href="#"
+						class="nav-link">Films</a></li>
+					<li role="presentation" class="nav-item"><a href="#"
+						class="nav-link">Musiques</a></li>
+					<li role="presentation" class="nav-item"><a href="#"
+						class="nav-link">Livres</a></li>
+					<li class="dropdown"><a data-toggle="dropdown"
+						aria-expanded="false" href="#"
+						class="dropdown-toggle nav-link dropdown-toggle">Autres</a>
+						<div role="menu" class="dropdown-menu">
+							<a role="presentation" href="#" class="dropdown-item">element</a><a
+								role="presentation" href="#" class="dropdown-item">element</a><a
+								role="presentation" href="#" class="dropdown-item">element</a>
+						</div></li>
+				</ul>
+				<div style="text-align:center;">
+				<span class="navbar-text actions" style="text-align:center;">
+					<li class="dropdown order-1" id="connex" ><a
+						data-toggle="dropdown" aria-expanded="false" href="#"
+						class="dropdown-toggle nav-link dropdown-toggle">Connexion</a>
+						
+						 <div ng-include="'resources/widgets/connexion.html'"></div>
+						 
+						</li> <a class="btn btn-light action-button" role="button" href="#"
+					style="background-color: #566fc6;" data-toggle="modal" data-target="#ModalInscription">Inscription</a>
+				</span>
+			</div>
+			</div>
+		</div>
+		</nav>
+
+	</div>
+	
+	 <div ng-controller="messagealerte" id="messageBox" >	
+	 	<div uib-alert="messageAlert" id="messageAlert" class='repeat-item'  ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" dismiss-on-timeout="3000">{{alert.msg}}</div>
+	</div> 
+	</html>

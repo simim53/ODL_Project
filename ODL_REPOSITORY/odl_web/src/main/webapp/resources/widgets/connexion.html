@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<ul class="dropdown-menu dropdown-menu-right mt-1">
+	<!-- ng-hide="hideconn"-->
+	<li class="p-3" id="formcon">
+
+		<form role="form" ng-submit="onLogin()" ng-controller="identification">
+
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fa fa-user"></i></span>
+					</div>
+					<input id="loginInput" placeholder="Identifiant"
+						class="form-control form-control-sm" type="text" name="username"
+						ng-model="credentials.username" required='true'> </input>
+				</div>
+
+			</div>
+			<div class="form-group">
+
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fa fa-key"></i></span>
+					</div>
+					<input id="passwordInput" placeholder="Mot de passe"
+						class="form-control form-control-sm" type="password"
+						name="password" ng-model="credentials.password" required='true'>
+					</input>
+				</div>
+
+
+			</div>
+			<div class="form-group" style="text-align: center;">
+				<button class="btn btn-light action-button" role="button"
+					style="background-color: #566fc6;" id="btnseconnecter"
+					type="submit">Se connecter</button>
+			</div>
+			<div class="form-group text-xs-center" style="text-align: center;">
+				<small><a href="#">Mot de passe oublié?</a></small>
+			</div>
+
+		</form>
+
+	</li>
+
+	<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
+
+</ul>
+
+</html>
