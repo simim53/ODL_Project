@@ -11,7 +11,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 public class UtilisateurDaoTest {
-	 /*
+	 /*//
 	   private static PlatformTransactionManager transactionManager;
 	 
 	   @BeforeClass
