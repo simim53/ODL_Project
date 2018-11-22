@@ -29,9 +29,10 @@ import odl_web_security.RestUnauthorizedEntryPoint;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	 @Bean
+	 @Override
 	  public UserDetailsService userDetailsService() {
 		  return new UserDetailsServiceImp();
-	  };
+	  }
 	  
 	  @Bean
 	  public BCryptPasswordEncoder passwordEncoder() {

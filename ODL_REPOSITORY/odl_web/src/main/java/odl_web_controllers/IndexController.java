@@ -23,13 +23,10 @@ class IndexController {
 	    return "utilisateurListDisplay";
 	  }*/
 	
-	 @ResponseBody
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@ResponseBody
+	@GetMapping(path = "/index")  
     public ModelAndView index() {
-	   ModelAndView mv= new ModelAndView("index");
-	   
-	      
-        return mv;
+	   return new ModelAndView("index");
     }
 	/*
 	 @RequestMapping(method = RequestMethod.GET)

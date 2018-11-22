@@ -37,7 +37,7 @@ app.controller('identification', function($scope,$rootScope, $http) {
 //Controller valide session
 app.controller('myMenuController',function($scope,$rootScope, $http){
 
-    getSessionInfo = function () {
+    let getSessionInfo = function () {
         $http.get('/odl_web/getSession')
             .then(function(data) {
                 $scope.user = data;
