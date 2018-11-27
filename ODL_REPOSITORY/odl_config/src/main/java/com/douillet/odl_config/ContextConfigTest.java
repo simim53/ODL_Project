@@ -35,7 +35,7 @@ import odl_hibernate_model.Utilisateur;
 								"com.douillet.odl_dao_core"})
 
 
-public class contextConfig {
+public class ContextConfigTest {
 
    @Autowired
    private Environment env;
