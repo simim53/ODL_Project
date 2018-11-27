@@ -15,7 +15,7 @@ import com.douillet.odl_dao_api.UtilisateurDAO;
 import odl_hibernate_model.Adresse;
 import odl_hibernate_model.Utilisateur;
 
-@ContextConfiguration(classes = com.douillet.odl_config.ContextConfigTest.class)
+@ContextConfiguration(classes = com.douillet.odl_config.TestAppConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UtilisateurDaoTest {
 
