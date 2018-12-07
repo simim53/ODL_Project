@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  */
 
 @Entity
-@Table(name = "Users")
+@Table(name = "UTILISATEURS")
 public class Utilisateur implements java.io.Serializable {
 
 	/**

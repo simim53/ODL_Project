@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  */
 
 @Entity
-@Table(name = "Adresses")
+@Table(name = "ADRESSES")
 public class Adresse implements java.io.Serializable {
 
 	/**

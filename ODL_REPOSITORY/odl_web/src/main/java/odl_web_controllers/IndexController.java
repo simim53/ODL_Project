@@ -4,8 +4,6 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -21,11 +19,12 @@ class IndexController {
 	    return "utilisateurListDisplay";
 	  }*/
 	
-	@ResponseBody
+	
 	@GetMapping(path = "/index")  
-    public ModelAndView index() {
-		return new ModelAndView("index");
+    public String index() {
+		return  ("index");
     }
+	
 	/*
 	 @RequestMapping(method = RequestMethod.GET)
 	    public String sayHello(ModelMap model) {
