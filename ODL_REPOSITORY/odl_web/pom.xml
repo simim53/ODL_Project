@@ -105,31 +105,31 @@
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_service_api</artifactId>
-			<version>0.0.6-SNAPSHOT</version>
+			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_service_core</artifactId>
-			<version>0.0.6-SNAPSHOT</version>
+			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_hibernate_data_lib</artifactId>
-			<version>0.0.6-SNAPSHOT</version>
+			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_dao_api</artifactId>
-			<version>0.0.6-SNAPSHOT</version>
+			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_dao_core</artifactId>
-			<version>0.0.6-SNAPSHOT</version>
+			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
@@ -161,7 +161,7 @@
 
 	<parent>
 		<groupId>com.douillet</groupId>
-		<version>0.0.6-SNAPSHOT</version>
+		<version>0.0.7-SNAPSHOT</version>
 		<artifactId>odl_all</artifactId>
 		<relativePath>../odl_all</relativePath>
 	</parent>
