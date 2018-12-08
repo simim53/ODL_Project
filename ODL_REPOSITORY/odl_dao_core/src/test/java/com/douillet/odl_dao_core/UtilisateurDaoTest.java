@@ -20,7 +20,7 @@ import odl_hibernate_model.Utilisateur;
 public class UtilisateurDaoTest {
 
 	final static Logger logger = Logger.getLogger(UtilisateurDaoTest.class);
-	
+
 	private String login = "test";
 	private String password = "test";
 	private String ville = "Laval";

@@ -1,15 +1,13 @@
 package odl_hibernate_model;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
@@ -27,8 +25,8 @@ public class Adresse implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column(name = "ADRESSEID")
 	@GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-	@Column(name = "ADRESSEID", nullable = false)
 	private int adresseID;
 
 	@Column(name = "NUMERO")
@@ -49,15 +47,16 @@ public class Adresse implements java.io.Serializable {
 	@Column(name = "COMPLEMENT")
 	private String complement;
 
-	@OneToMany(cascade=CascadeType.ALL,mappedBy = "adresse")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "USERID")
 	@JsonBackReference
-	private List<Utilisateur> utilisateurs;
+	private Utilisateur utilisateur;
 
 	public Adresse() {
 	}
 
-	public Adresse(int adresseID, int numero, int codepostal, String rue, String ville, String pays,
-			String complement) {
+	public Adresse(int adresseID, int numero, int codepostal, String rue, String ville, String pays, String complement,
+			Utilisateur utilisateur) {
 		super();
 		this.adresseID = adresseID;
 		this.numero = numero;
@@ -66,6 +65,7 @@ public class Adresse implements java.io.Serializable {
 		this.ville = ville;
 		this.pays = pays;
 		this.complement = complement;
+		this.utilisateur = utilisateur;
 	}
 
 	public int getNumero() {
@@ -124,12 +124,12 @@ public class Adresse implements java.io.Serializable {
 		this.adresseID = adresseID;
 	}
 
-	public List<Utilisateur> getUtilisateurs() {
-		return utilisateurs;
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
 	}
 
-	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
-		this.utilisateurs = utilisateurs;
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
 
 }
