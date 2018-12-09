@@ -66,25 +66,6 @@ public class Utilisateur implements java.io.Serializable {
 	@JsonManagedReference
 	private Adresse adresse;
 
-	public Utilisateur(Adresse adresse, int userID, int age, String nom, String prenom, String telephonNumber,
-			String email, String login, String password, Date dateCreateAccount, String dateLastCon) {
-		super();
-		this.adresse = adresse;
-		this.userID = userID;
-		this.age = age;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.telephonNumber = telephonNumber;
-		this.email = email;
-		this.login = login;
-		this.password = password;
-		this.dateCreateAccount = dateCreateAccount;
-		this.dateLastCon = dateLastCon;
-	}
-
-	public Utilisateur() {
-
-	}
 
 	public String getNom() {
 		return nom;

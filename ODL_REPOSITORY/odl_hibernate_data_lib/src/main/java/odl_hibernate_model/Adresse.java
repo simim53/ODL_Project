@@ -52,21 +52,6 @@ public class Adresse implements java.io.Serializable {
 	@JsonBackReference
 	private Utilisateur utilisateur;
 
-	public Adresse() {
-	}
-
-	public Adresse(int adresseID, int numero, int codepostal, String rue, String ville, String pays, String complement,
-			Utilisateur utilisateur) {
-		super();
-		this.adresseID = adresseID;
-		this.numero = numero;
-		this.codepostal = codepostal;
-		this.rue = rue;
-		this.ville = ville;
-		this.pays = pays;
-		this.complement = complement;
-		this.utilisateur = utilisateur;
-	}
 
 	public int getNumero() {
 		return numero;
