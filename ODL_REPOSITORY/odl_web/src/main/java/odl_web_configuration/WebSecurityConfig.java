@@ -84,15 +84,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.addFilterBefore(filter, CsrfFilter.class);
 
 		http.authorizeRequests().anyRequest().permitAll().and().authorizeRequests()
-				.antMatchers("resources/**", "/css/**").permitAll().and().csrf().disable()
-				.addFilterBefore(filter, CsrfFilter.class);
+				.antMatchers("resources/**", "/css/**").permitAll();
+				
 
-		http.addFilterBefore(filter, CsrfFilter.class).headers().disable().csrf().disable().authorizeRequests()
+		http.csrf().ignoringAntMatchers("/login").and().authorizeRequests()
 				// .antMatchers("/v2/api-docs").hasAnyAuthority("admin")
 				// .antMatchers("/users/**").hasAnyAuthority("admin")
 				.anyRequest().authenticated().and().exceptionHandling()
 				.authenticationEntryPoint(restAuthenticationEntryPoint).accessDeniedHandler(restAccessDeniedHandler)
-				.and().formLogin().loginProcessingUrl("/login").loginPage("/index.html").permitAll()
+				.and().formLogin().loginProcessingUrl("/login").loginPage("/index").permitAll()
 				.successHandler(restAuthenticationSuccessHandler).failureHandler(restAuthenticationFailureHandler)
 				.usernameParameter("username").passwordParameter("password").permitAll().and().logout()
 				.logoutUrl("/logout").logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
