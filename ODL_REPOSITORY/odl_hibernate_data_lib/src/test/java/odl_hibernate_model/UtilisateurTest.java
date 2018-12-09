@@ -40,8 +40,8 @@ public class UtilisateurTest {
 		user.setEmail(email);
 		user.setUserID(userid);
 		
-		Assert.assertSame(user.getAdresse().getAdresseID(),adresseid);
-		Assert.assertSame(user.getAge(), age);
+		Assert.assertEquals(user.getAdresse().getAdresseID(),adresseid);
+		Assert.assertEquals(user.getAge(), age);
 		Assert.assertSame(user.getDateCreateAccount(), datecreation);
 		Assert.assertSame(user.getDateLastCon(), datelogin);
 		Assert.assertSame(user.getLogin(), login);
@@ -50,6 +50,6 @@ public class UtilisateurTest {
 		Assert.assertSame(user.getPassword(), password);
 		Assert.assertSame(user.getTelephonNumber(), telephone);
 		Assert.assertSame(user.getEmail(), email);
-		Assert.assertSame(user.getUserID(), userid);
+		Assert.assertEquals(user.getUserID(), userid);
 	}
 }
