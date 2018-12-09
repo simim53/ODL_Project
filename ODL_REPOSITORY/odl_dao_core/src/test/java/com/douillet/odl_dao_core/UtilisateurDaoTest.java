@@ -41,7 +41,7 @@ public class UtilisateurDaoTest {
 	@Test
 	@Transactional
 	@Rollback(true)
-	public void testAddutilisateur() {
+	public void addUtilisateur() {
 
 		UtilisateurDAO.addUtilisateur(user);
 		Utilisateur userinbase = UtilisateurDAO.getUtilisateur(user.getUserID());
@@ -54,7 +54,7 @@ public class UtilisateurDaoTest {
 	@Test
 	@Transactional
 	@Rollback(true)
-	public void findUtilisateurbyname() {
+	public void findUserByUsername() {
 
 		UtilisateurDAO.addUtilisateur(user);
 		Utilisateur userinbase = UtilisateurDAO.findUserByUsername(user.getLogin());
