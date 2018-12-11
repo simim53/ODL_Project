@@ -46,10 +46,6 @@
 	text-align: center;
 }
 
-.footer-basic footer .copyright {
-	
-}
-
 .nav.navbar-nav.mr-auto .nav-item {
 	text-align: center;
 }
@@ -120,15 +116,6 @@
 	margin-left: 0px !important;
 }
 
-#navcol-1 .navbar-text.actions .btn.btn-light.action-button {
-	
-}
-
-.navbar-text.actions #connex .dropdown-menu.dropdown-menu-right.mt-1 {
-	-webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.81);
-	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.81);
-	padding-bottom: 0px !important;
-}
 
 @media ( min-width : 768px) {
 	.navbar.navbar-light.navbar-expand-md.navigation-clean-button .container 	.navbar-brand
@@ -145,6 +132,12 @@
 		border-bottom: medium solid rgba(59, 59, 255, 0.68);
 		color: rgba(59, 59, 255, 1.0) !important;
 	}
+	.nav.navbar-nav.mr-auto .nav-item .nav-link {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
 	.nav.navbar-nav.mr-auto .nav-item .nav-link:hover {
 		background-color: rgba(0, 0, 0, 0.00);
 		border-radius: 0px;
@@ -158,12 +151,7 @@
 		{
 		background-color: rgba(0, 0, 0, 0.00) !important;
 	}
-	.nav.navbar-nav.mr-auto .nav-item .nav-link {
-		padding-left: 10px;
-		padding-right: 10px;
-		margin-left: 5px;
-		margin-right: 5px;
-	}
+
 	.nav.navbar-nav.mr-auto .dropdown .dropdown-toggle.nav-link.dropdown-toggle
 		{
 		margin-left: 10px;

@@ -13,50 +13,56 @@
 	</properties>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_dao_api</artifactId>
 			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_hibernate_data_lib</artifactId>
 			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_config</artifactId>
 			<version>0.0.7-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-		
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>

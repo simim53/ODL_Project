@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
@@ -51,7 +52,6 @@ public class Adresse implements java.io.Serializable {
 	@JoinColumn(name = "USERID")
 	@JsonBackReference
 	private Utilisateur utilisateur;
-
 
 	public int getNumero() {
 		return numero;

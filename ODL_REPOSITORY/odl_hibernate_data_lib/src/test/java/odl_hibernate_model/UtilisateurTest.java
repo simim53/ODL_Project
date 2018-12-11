@@ -2,13 +2,14 @@ package odl_hibernate_model;
 
 import java.util.Date;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class UtilisateurTest {
 
-	final static Logger logger = Logger.getLogger(UtilisateurTest.class);
+	final static Logger logger = LogManager.getLogger(UtilisateurTest.class);
 
 	private int userid = 1;
 	private int age = 20;

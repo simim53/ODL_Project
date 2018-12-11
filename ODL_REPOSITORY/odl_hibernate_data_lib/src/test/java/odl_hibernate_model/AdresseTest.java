@@ -1,12 +1,13 @@
 package odl_hibernate_model;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class AdresseTest {
 
-	final static Logger logger = Logger.getLogger(AdresseTest.class);
+	final static Logger logger = LogManager.getLogger(AdresseTest.class);
 
 	private int adresseid = 1;
 	private int numero = 1;
