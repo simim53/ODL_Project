@@ -1,7 +1,8 @@
 package com.douillet.odl_dao_core;
 
 import org.junit.runner.RunWith;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import odl_hibernate_model.Utilisateur;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UtilisateurDaoTest {
 
-	final static Logger logger = Logger.getLogger(UtilisateurDaoTest.class);
+	final static Logger logger = LogManager.getLogger(UtilisateurDaoTest.class);
 
 	private String login = "test";
 	private String password = "test";

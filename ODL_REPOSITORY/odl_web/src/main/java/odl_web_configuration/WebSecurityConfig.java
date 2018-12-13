@@ -106,6 +106,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**", "/index", "/partials/**", "/", "/error/**", "/getSession");
+		web.ignoring().antMatchers("/resources/**", "/construction","/index", "/partials/**", "/", "/error/**", "/getSession");
 	}
 }
