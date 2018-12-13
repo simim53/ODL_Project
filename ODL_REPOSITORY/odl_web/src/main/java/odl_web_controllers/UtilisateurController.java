@@ -30,7 +30,7 @@ public class UtilisateurController {
 		 Utilisateur user = new Utilisateur();
 		 user = serviceutilisateur.findUserByUsername(login);
 
-		return //user.getLogin();
+		return user.getLogin();
 	}
 
 }
