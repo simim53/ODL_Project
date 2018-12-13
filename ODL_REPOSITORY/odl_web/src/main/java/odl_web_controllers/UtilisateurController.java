@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.douillet.odl_service_api.UtilisateurService;
 
+import odl_hibernate_model.Utilisateur;
+
 @RestController
 public class UtilisateurController {
 
@@ -23,9 +25,12 @@ public class UtilisateurController {
 
 	@GetMapping(path = "/getSession", headers = "Accept=*/*")
 	public String getSession(HttpSession session) {
-		// Utilisateur user = (Utilisateur) session.getAttribute("utilisateur");
+		 String login = (String) session.getAttribute("username");
+		 
+		 Utilisateur user = new Utilisateur();
+		 user = serviceutilisateur.findUserByUsername(login);
 
-		return "test rest";
+		return //user.getLogin();
 	}
 
 }
