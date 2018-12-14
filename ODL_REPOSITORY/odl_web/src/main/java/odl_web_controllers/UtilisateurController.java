@@ -28,7 +28,7 @@ public class UtilisateurController {
 		 String login = (String) session.getAttribute("username");
 		 
 		 Utilisateur user = new Utilisateur();
-		 user = serviceutilisateur.findUserByUsername(login);
+		 user = serviceutilisateur.findUserByUsername(login)
 
 		return user.getLogin();
 	}
