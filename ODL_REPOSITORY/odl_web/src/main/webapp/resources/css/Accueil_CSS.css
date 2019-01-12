@@ -110,6 +110,11 @@
 	margin-left: 0px !important;
 }
 
+.navbar-text.actions #connex .dropdown-menu.dropdown-menu-right.mt-1 {
+	-webkit-box-shadow: 8px 8px 8px rgba(0,0,0,0.81);
+	box-shadow: 8px 8px 8px rgba(0,0,0,0.81);
+	    padding-bottom: 0px!important;
+}
 
 @media ( min-width : 768px) {
 	.navbar.navbar-light.navbar-expand-md.navigation-clean-button .container 	.navbar-brand
