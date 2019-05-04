@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
-			<version>6.2.2.jre8</version>
+			<version>${mssql-jdbc.version}</version>
 		</dependency>
 
 		<dependency>
@@ -57,7 +57,7 @@
 		</plugins>
 	</build>
 	<parent>
-		<version>0.0.7-SNAPSHOT</version>
+		<version>${global.version}</version>
 		<groupId>com.douillet</groupId>
 		<artifactId>odl_all</artifactId>
 		<relativePath>../odl_all</relativePath>

@@ -111,31 +111,31 @@
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_service_api</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>${global.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_service_core</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>${global.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_hibernate_data_lib</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>${global.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_dao_api</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>${global.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.douillet</groupId>
 			<artifactId>odl_dao_core</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>${global.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -157,17 +157,41 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${maven-war-plugin.version}</version>
 				<configuration>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-					<warName>odl_web</warName>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
+				   <manifest>
+				  	  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+				   </manifest>
+				   <archive>
+					    <manifestEntries>
+						     <Major-Version>${project.version}</Major-Version>    
+						     <Build-Time>${maven.build.timestamp}</Build-Time>
+						     <Build-User>${user.name}</Build-User>
+						     <Implementation-Title>ODL_PROJECT</Implementation-Title>
+							 <Implementation-Version>${project.version}</Implementation-Version>
+                             <Implementation-Vendor-Id>DOUILLET</Implementation-Vendor-Id>
+                             <Implementation-Vendor>DOUILLET</Implementation-Vendor>
+					    </manifestEntries>
+				   </archive>
+			  </configuration>
 			</plugin>
+			<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+				<archive>
+					<manifest>	
+						<manifestEntries>
+               				  <version>${global.version}</version>
+            			 </manifestEntries>
+					</manifest>
+				</archive>
+			</configuration>
+    </plugin>
 		</plugins>
 	</build>
 
 	<parent>
 		<groupId>com.douillet</groupId>
-		<version>0.0.7-SNAPSHOT</version>
+		<version>${global.version}</version>
 		<artifactId>odl_all</artifactId>
 		<relativePath>../odl_all</relativePath>
 	</parent>

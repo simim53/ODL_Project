@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.douillet.odl_service_api.UtilisateurService;
 
+import odl_web_model.Response;
+
 @RestController
 public class UtilisateurController {
 
@@ -23,7 +25,12 @@ public class UtilisateurController {
 	 public String currentUserNameSimple(Authentication authentication) {
         return "null";
     }
-		
+	@GetMapping(path = "/appVersion", headers = "Accept=*/*")
+	 public Response getversion() {
+		Response version = new Response(1,null,null);
+		version.setMessage(getClass().getPackage().getImplementationVersion());	
+		return version;
+   }	
 	 
 
 

@@ -4,18 +4,22 @@
 
 	<groupId>com.douillet</groupId>
 	<artifactId>odl_all</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>${global.version}</version>
 	<packaging>pom</packaging>
 
 	<name>odl_all</name>
 
 
 	<properties>
+	
+		<global.version>0.0.8-SNAPSHOT</global.version>	
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate.version>5.2.13.Final</hibernate.version>
 		<spring.version> 5.0.4.RELEASE</spring.version>
 		<mssqlserver.driver.version>5.1.4</mssqlserver.driver.version>
+		
+		<mssql-jdbc.version>6.2.2.jre8</mssql-jdbc.version>
 
 		<jackson-databind.version>2.9.6</jackson-databind.version>
 		<jackson-annotations.version>2.9.6</jackson-annotations.version>

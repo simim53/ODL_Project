@@ -57,4 +57,13 @@ app.controller('messagealerte',function($scope,$rootScope, $http){
 
 });
 
+// Controller get version
+app.controller('Version', function($scope,$rootScope, $http) {
+    $http.get('/odl_web/appVersion').then(function successCallback(response){    		
+        	$scope.application = response.data.message;        
+      }
+      ,function errorCallback(response) {
+    	  console.log(data);
 
+      });
+});
