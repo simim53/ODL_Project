@@ -34,7 +34,7 @@ public interface UtilisateurDAO {
 	 */
 	public void deleteUtilisateur(Utilisateur utilisateur);
 	
-	public Utilisateur findUserByUsername(String username);
+	public Utilisateur findUserByUsernameOrEmail(String usernameOrEmail);
 
 	
 }

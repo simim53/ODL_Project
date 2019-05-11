@@ -28,7 +28,7 @@ public class RestAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication)
             throws ServletException, IOException {
-        Utilisateur user = userService.findUserByUsername(authentication.getName());        
+        Utilisateur user = userService.findUserByUsernameOrEmail(authentication.getName());        
         SecurityUtils.sendResponse(response, HttpServletResponse.SC_OK, user);
     }
 }

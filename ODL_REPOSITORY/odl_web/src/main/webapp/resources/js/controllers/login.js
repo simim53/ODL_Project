@@ -28,9 +28,7 @@ app.config(function($routeProvider) {
            
         })
         
-        .otherwise({redirectTo: '/accueil'})
-
-
+        .otherwise({redirectTo: '/accueil'})     
        
 });
 

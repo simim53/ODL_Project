@@ -25,6 +25,7 @@ public class UtilisateurDaoTest {
 	private String login = "test";
 	private String password = "test";
 	private String ville = "Laval";
+	private String email = "test@email.com";
 
 	private Utilisateur user = new Utilisateur();
 	private Adresse adr = new Adresse();
@@ -34,6 +35,7 @@ public class UtilisateurDaoTest {
 		user.setLogin(password);
 		user.setPassword(login);
 		user.setAdresse(adr);
+		user.setEmail(email);
 	}
 
 	@Autowired
@@ -49,16 +51,17 @@ public class UtilisateurDaoTest {
 
 		Assert.assertSame(user.getLogin(), userinbase.getLogin());
 		Assert.assertSame(user.getAdresse(), userinbase.getAdresse());
+		Assert.assertSame(user.getEmail(), userinbase.getEmail());
 
 	}
 
 	@Test
 	@Transactional
 	@Rollback(true)
-	public void findUserByUsername() {
+	public void findUserByUsernameOrEmail() {
 
 		UtilisateurDAO.addUtilisateur(user);
-		Utilisateur userinbase = UtilisateurDAO.findUserByUsername(user.getLogin());
+		Utilisateur userinbase = UtilisateurDAO.findUserByUsernameOrEmail(user.getLogin());
 
 		Assert.assertSame(user.getLogin(), userinbase.getLogin());
 

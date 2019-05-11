@@ -53,8 +53,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	
 	@Override
 	@Transactional
-	public Utilisateur findUserByUsername(String login){
-		return userdao.findUserByUsername(login);
+	public Utilisateur findUserByUsernameOrEmail(String loginOrEmail){
+		return userdao.findUserByUsernameOrEmail(loginOrEmail);
 
 	}
 	

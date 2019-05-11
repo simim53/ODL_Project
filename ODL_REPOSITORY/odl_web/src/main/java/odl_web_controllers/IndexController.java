@@ -23,7 +23,7 @@ class IndexController {
 			return new ModelAndView("construction");		
 			
 		}
-	
+/*	
 	@RequestMapping({ "/film"})
 	   public String film() {
 		logger.debug("TEST Affichage page film (/film)");
@@ -35,7 +35,7 @@ class IndexController {
 		logger.debug("Affichage page accueil (/accueil)");
 		return "accueil";	
 	}
-	
+*/
 	@RequestMapping(value = "/")
 	public ModelAndView getindex() {
 		logger.debug("Affichage page index (/)");

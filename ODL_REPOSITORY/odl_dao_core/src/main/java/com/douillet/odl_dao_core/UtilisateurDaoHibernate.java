@@ -69,12 +69,18 @@ public class UtilisateurDaoHibernate implements UtilisateurDAO {
 	}
 
 	@Override
-	public Utilisateur findUserByUsername(String username) {
+	public Utilisateur findUserByUsernameOrEmail(String usernameOrMail) {
 
+		// to do : try catch si pas d'utilisateur trouvé
 		CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
 		CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
 		Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
-		cq.select(rootEntry).where(cb.equal(rootEntry.get("login"), username));
+		cq.select(rootEntry).where(cb.or(
+				 cb.equal(rootEntry.get("login"), usernameOrMail),
+				 cb.equal(rootEntry.get("email"), usernameOrMail)));
+
+		
+
 		Query<Utilisateur> q = sessionFactory.getCurrentSession().createQuery(cq);
 
 		return q.getSingleResult();

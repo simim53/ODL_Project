@@ -21,14 +21,14 @@ public class UserDetailsServiceImp implements UserDetailsService {
 
 	  @Transactional(readOnly = true)
 	  @Override
-	  public UserDetails loadUserByUsername(String username){
+	  public UserDetails loadUserByUsername(String usernameOrEmail){
 		
-	    Utilisateur user =  userDetailsDao.findUserByUsername(username);
+	    Utilisateur user =  userDetailsDao.findUserByUsernameOrEmail(usernameOrEmail);
 	    
 	    UserBuilder builder = null;
 	    if (user != null) {
 	      
-	      builder = org.springframework.security.core.userdetails.User.withUsername(username);
+	      builder = org.springframework.security.core.userdetails.User.withUsername(usernameOrEmail);
 	      builder.disabled(false);
 	      builder.password(user.getPassword());
 	      builder.roles("ADMIN");
