@@ -1,8 +1,38 @@
-var app = angular.module("indexApp",['ngAnimate','ui.bootstrap']);
+var app = angular.module("indexApp",['ngAnimate','ui.bootstrap','ngRoute','ngResource']);
+
+app.config(function($locationProvider) {
+
+	$locationProvider.hashPrefix('');
+	$locationProvider.html5Mode({
+	    enabled: false,
+	    requireBase: true
+	  });
+	});
 
 app.config([ '$qProvider', function($qProvider) {
 	$qProvider.errorOnUnhandledRejections(false);
 } ]);
+app.config(function($routeProvider) {
+    $routeProvider
+        // route for the about page
+        .when('/accueil', {
+            templateUrl : 'resources/pages/accueil.html',
+            //controller  : 'AccueilController'            
+           
+        })
+        
+     // route for the about page
+        .when('/film', {
+            templateUrl : 'resources/pages/film.html',
+            //controller  : 'FilmController'            
+           
+        })
+        
+        .otherwise({redirectTo: '/accueil'})
+
+
+       
+});
 
 //Controller identification utilisateur
 app.controller('identification', function($scope,$rootScope, $http) {
@@ -67,3 +97,23 @@ app.controller('Version', function($scope,$rootScope, $http) {
 
       });
 });
+
+
+app.run([
+	  '$rootScope',
+	  function($rootScope) {
+	    // see what's going on when the route tries to change
+	    $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
+	      // both newUrl and oldUrl are strings
+	      console.log('Starting to leave %s to go to %s', oldUrl, newUrl);
+	    });	    
+	  }
+	]);
+
+app.controller('HeaderController', function($rootScope,$location) {
+	$rootScope.getClass = function (path) {
+		  return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+		}
+});
+
+

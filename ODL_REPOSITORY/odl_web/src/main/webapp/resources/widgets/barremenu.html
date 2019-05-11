@@ -15,12 +15,12 @@
 				<span class="sr-only">Toggle navigation</span><span
 					class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navcol-1">
+			<div class="collapse navbar-collapse" id="navcol-1" ng-controller="HeaderController">
 				<ul class="nav navbar-nav mr-auto">
-					<li role="presentation" class="nav-item"><a href="/odl_web/index"
-						class="nav-link active">Accueil</a></li>
-					<li role="presentation" class="nav-item"><a href="/odl_web/construction"
-						class="nav-link">Films</a></li>
+					<li role="presentation" class="nav-item"><a href="#/accueil"
+						class="nav-link" ng-class="getClass('/accueil')">Accueil</a></li>
+					<li role="presentation" class="nav-item"><a href="#/film"
+						class="nav-link" ng-class="getClass('/film')">Films</a></li>
 					<li role="presentation" class="nav-item"><a href="/odl_web/construction"
 						class="nav-link">Musiques</a></li>
 					<li role="presentation" class="nav-item"><a href="/odl_web/construction"

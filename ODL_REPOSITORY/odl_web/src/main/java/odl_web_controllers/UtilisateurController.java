@@ -1,9 +1,14 @@
 package odl_web_controllers;
 
+import java.util.Calendar;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.douillet.odl_service_api.UtilisateurService;
 
@@ -11,6 +16,8 @@ import odl_web_model.Response;
 
 @RestController
 public class UtilisateurController {
+	
+	final Logger logger = LogManager.getLogger(UtilisateurController.class);
 
 	@Autowired
 	UtilisateurService serviceutilisateur;
@@ -28,10 +35,17 @@ public class UtilisateurController {
 	@GetMapping(path = "/appVersion", headers = "Accept=*/*")
 	 public Response getversion() {
 		Response version = new Response(1,null,null);
-		version.setMessage(getClass().getPackage().getImplementationVersion());	
+		int annee = Calendar.getInstance().get(Calendar.YEAR);
+		version.setMessage("Projet ODL "+ annee +" _ V." + getClass().getPackage().getImplementationVersion());	
 		return version;
    }	
 	 
+	@GetMapping(path = "/#/film", headers = "Accept=*/*" )
+	   public String index2() {
+		logger.debug("TEST Affichage page film");
+	       return "accueil";
+	   }
+	
 
 
 }
