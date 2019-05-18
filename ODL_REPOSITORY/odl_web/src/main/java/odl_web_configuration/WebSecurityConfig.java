@@ -1,5 +1,7 @@
 package odl_web_configuration;
 
+import com.douillet.odl_service_core.UserDetailsServiceImp;
+import odl_web_security.RestUnauthorizedEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,102 +21,101 @@ import org.springframework.security.web.authentication.logout.HttpStatusReturnin
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.douillet.odl_service_core.UserDetailsServiceImp;
-
-import odl_web_security.RestUnauthorizedEntryPoint;
-
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@ComponentScan(basePackages = { "odl_web_security" })
+@ComponentScan(basePackages = {"odl_web_security"})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		return new UserDetailsServiceImp();
-	}
+    public WebSecurityConfig(AuthenticationFailureHandler restAuthenticationFailureHandler, AuthenticationSuccessHandler restAuthenticationSuccessHandler, RestUnauthorizedEntryPoint restAuthenticationEntryPoint, AccessDeniedHandler restAccessDeniedHandler) {
+        this.restAuthenticationFailureHandler = restAuthenticationFailureHandler;
+        this.restAuthenticationSuccessHandler = restAuthenticationSuccessHandler;
+        this.restAuthenticationEntryPoint = restAuthenticationEntryPoint;
+        this.restAccessDeniedHandler = restAccessDeniedHandler;
+    }
 
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+    @Bean
+    @Override
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsServiceImp();
+    }
 
-	@Autowired
-	private AuthenticationFailureHandler restAuthenticationFailureHandler;
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-	@Autowired
-	private AuthenticationSuccessHandler restAuthenticationSuccessHandler;
+    private final AuthenticationFailureHandler restAuthenticationFailureHandler;
 
-	@Autowired
-	private RestUnauthorizedEntryPoint restAuthenticationEntryPoint;
+    private final AuthenticationSuccessHandler restAuthenticationSuccessHandler;
 
-	@Autowired
-	private AccessDeniedHandler restAccessDeniedHandler;
+    private final RestUnauthorizedEntryPoint restAuthenticationEntryPoint;
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
-	}
+    private final AccessDeniedHandler restAccessDeniedHandler;
 
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService());
-	}
-	/*
-	 * @Override protected void configure(HttpSecurity http) throws Exception {
-	 * http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER") .and()
-	 * .authorizeRequests().antMatchers("resources/**","/css/**").permitAll() .and()
-	 * .csrf().disable();
-	 * 
-	 * http .authorizeRequests() .antMatchers("/resources/**").permitAll()
-	 * .anyRequest().authenticated() .and() .formLogin() .loginPage("/login")
-	 * .usernameParameter("username") .passwordParameter("password") .permitAll()
-	 * .and() .logout() .permitAll().and() .csrf().disable();
-	 * 
-	 * 
-	 * }
-	 */
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+    }
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		CharacterEncodingFilter filter = new CharacterEncodingFilter();
-		filter.setEncoding("UTF-8");
-		filter.setForceEncoding(true);
-		http.addFilterBefore(filter, CsrfFilter.class);
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService());
+    }
+    /*
+     * @Override protected void configure(HttpSecurity http) throws Exception {
+     * http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER") .and()
+     * .authorizeRequests().antMatchers("resources/**","/css/**").permitAll() .and()
+     * .csrf().disable();
+     *
+     * http .authorizeRequests() .antMatchers("/resources/**").permitAll()
+     * .anyRequest().authenticated() .and() .formLogin() .loginPage("/login")
+     * .usernameParameter("username") .passwordParameter("password") .permitAll()
+     * .and() .logout() .permitAll().and() .csrf().disable();
+     *
+     *
+     * }
+     */
 
-		http.authorizeRequests().anyRequest().permitAll().and().authorizeRequests()
-				.antMatchers("resources/**", "/css/**").permitAll();
-				
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        http.addFilterBefore(filter, CsrfFilter.class);
 
-		http.csrf().ignoringAntMatchers("/login").and().authorizeRequests()
-				// .antMatchers("/v2/api-docs").hasAnyAuthority("admin")
-				// .antMatchers("/users/**").hasAnyAuthority("admin")
-				.anyRequest().authenticated().and().exceptionHandling()
-				.authenticationEntryPoint(restAuthenticationEntryPoint).accessDeniedHandler(restAccessDeniedHandler)
-				.and().formLogin().loginProcessingUrl("/login").loginPage("/index").permitAll()
-				.successHandler(restAuthenticationSuccessHandler).failureHandler(restAuthenticationFailureHandler)
-				.usernameParameter("username").passwordParameter("password").permitAll().and().logout()
-				.logoutUrl("/logout").logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
-				.deleteCookies("JSESSIONID").permitAll();
-		// .and()
-		// .rememberMe()
-		// .rememberMeServices(rememberMeServices)
-		// .key(REMEMBER_ME_KEY)
-		// .and();
-	}
+        http.authorizeRequests().anyRequest().permitAll().and().authorizeRequests()
+                .antMatchers("resources/**", "/css/**").permitAll();
 
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**", 
-				"/construction",
-				"/index", 
-				"/partials/**", 
-				"/", 
-				"/error/**", 
-				"/getSession",
-				"/appVersion",
-				"/film"
-				);
-	}
+
+        http.csrf().ignoringAntMatchers("/login").and().authorizeRequests()
+                // .antMatchers("/v2/api-docs").hasAnyAuthority("admin")
+                // .antMatchers("/users/**").hasAnyAuthority("admin")
+                .anyRequest().authenticated().and().exceptionHandling()
+                .authenticationEntryPoint(restAuthenticationEntryPoint).accessDeniedHandler(restAccessDeniedHandler)
+                .and().formLogin().loginProcessingUrl("/login").loginPage("/index").permitAll()
+                .successHandler(restAuthenticationSuccessHandler).failureHandler(restAuthenticationFailureHandler)
+                .usernameParameter("username").passwordParameter("password").permitAll().and().logout()
+                .logoutUrl("/logout").logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
+                .deleteCookies("JSESSIONID").permitAll();
+        // .and()
+        // .rememberMe()
+        // .rememberMeServices(rememberMeServices)
+        // .key(REMEMBER_ME_KEY)
+        // .and();
+    }
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/resources/**",
+                "/construction",
+                "/index",
+                "/partials/**",
+                "/",
+                "/error/**",
+                "/getSession",
+                "/appVersion",
+                "/film"
+        );
+    }
 }

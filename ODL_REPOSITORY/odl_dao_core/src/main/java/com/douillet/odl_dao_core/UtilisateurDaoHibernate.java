@@ -21,69 +21,70 @@ import odl_hibernate_model.Utilisateur;
 @Transactional
 public class UtilisateurDaoHibernate implements UtilisateurDAO {
 
-	@Autowired(required = true)
-	private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
+    @Autowired
+    public UtilisateurDaoHibernate(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
-	@Override
-	public Utilisateur getUtilisateur(int utilisateurId) {
-		return sessionFactory.getCurrentSession().get(Utilisateur.class, utilisateurId);
-	}
+    @Override
+    public Utilisateur getUtilisateur(int utilisateurId) {
+        return sessionFactory.getCurrentSession().get(Utilisateur.class, utilisateurId);
+    }
 
-	@Override
-	public List<Utilisateur> getUtilisateurs() {
+    @Override
+    public List<Utilisateur> getUtilisateurs() {
 
-		CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
-		CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
-		Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
-		CriteriaQuery<Utilisateur> all = cq.select(rootEntry);
-		TypedQuery<Utilisateur> allQuery = sessionFactory.getCurrentSession().createQuery(all);
-		return allQuery.getResultList();
+        CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
+        Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
+        CriteriaQuery<Utilisateur> all = cq.select(rootEntry);
+        TypedQuery<Utilisateur> allQuery = sessionFactory.getCurrentSession().createQuery(all);
+        return allQuery.getResultList();
 
-	}
+    }
 
-	@Override
-	public void updateUtilisateur(Utilisateur utilisateur) {
+    @Override
+    public void updateUtilisateur(Utilisateur utilisateur) {
 
-		sessionFactory.getCurrentSession().update(utilisateur);
+        sessionFactory.getCurrentSession().update(utilisateur);
 
-	}
+    }
 
-	@Override
-	public void addUtilisateur(Utilisateur utilisateur) {
+    @Override
+    public void addUtilisateur(Utilisateur utilisateur) {
 
-		sessionFactory.getCurrentSession().persist(utilisateur);
+        sessionFactory.getCurrentSession().persist(utilisateur);
 
-	}
+    }
 
-	@Override
-	public void deleteUtilisateur(Utilisateur utilisateur) {
 
-		sessionFactory.getCurrentSession().delete(utilisateur);
+    @Override
+    public void deleteUtilisateur(Utilisateur utilisateur) {
 
-		// to do : supprimer l'adresse
+        sessionFactory.getCurrentSession().delete(utilisateur);
 
-	}
+        // to do : supprimer l'adresse
 
-	@Override
-	public Utilisateur findUserByUsernameOrEmail(String usernameOrMail) {
+    }
 
-		// to do : try catch si pas d'utilisateur trouvé
-		CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
-		CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
-		Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
-		cq.select(rootEntry).where(cb.or(
-				 cb.equal(rootEntry.get("login"), usernameOrMail),
-				 cb.equal(rootEntry.get("email"), usernameOrMail)));
+    @Override
+    public Utilisateur findUserByUsernameOrEmail(String usernameOrMail) {
 
-		
+        // to do : try catch si pas d'utilisateur trouvé
+        CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Utilisateur> cq = cb.createQuery(Utilisateur.class);
+        Root<Utilisateur> rootEntry = cq.from(Utilisateur.class);
+        cq.select(rootEntry).where(cb.or(
+                cb.equal(rootEntry.get("login"), usernameOrMail),
+                cb.equal(rootEntry.get("email"), usernameOrMail)
+        ));
 
-		Query<Utilisateur> q = sessionFactory.getCurrentSession().createQuery(cq);
 
-		return q.getSingleResult();
-	}
+        Query<Utilisateur> q = sessionFactory.getCurrentSession().createQuery(cq);
+
+        return q.getSingleResult();
+    }
 
 }

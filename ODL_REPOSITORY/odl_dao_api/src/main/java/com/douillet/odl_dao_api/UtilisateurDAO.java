@@ -9,32 +9,32 @@ import odl_hibernate_model.Utilisateur;
 public interface UtilisateurDAO {
 
 	/**
-	 * @param utilisateurid
+	 * @param utilisateurId
 	 * @return utilisateur
 	 */
-	public Utilisateur getUtilisateur(int utilisateurId);
+	Utilisateur getUtilisateur(int utilisateurId);
 
 	/**
 	 * @return List of utilisateurs
 	 */
-	public List<Utilisateur> getUtilisateurs();
+	List<Utilisateur> getUtilisateurs();
 
 	/**
 	 * @param utilisateur
 	 */
-	public void updateUtilisateur(Utilisateur utilisateur);
+	void updateUtilisateur(Utilisateur utilisateur);
 
 	/**
 	 * @param utilisateur
 	 */
-	public void addUtilisateur(Utilisateur utilisateur);
+	void addUtilisateur(Utilisateur utilisateur);
 
 	/**
 	 * @param utilisateur
 	 */
-	public void deleteUtilisateur(Utilisateur utilisateur);
+	void deleteUtilisateur(Utilisateur utilisateur);
 	
-	public Utilisateur findUserByUsernameOrEmail(String usernameOrEmail);
+	Utilisateur findUserByUsernameOrEmail(String usernameOrEmail);
 
 	
 }

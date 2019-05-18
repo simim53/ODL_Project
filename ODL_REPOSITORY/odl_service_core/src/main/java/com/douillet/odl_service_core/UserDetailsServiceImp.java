@@ -15,30 +15,30 @@ import odl_hibernate_model.Utilisateur;
 @Service("userDetailsService")
 public class UserDetailsServiceImp implements UserDetailsService {
 
-		@Autowired
-		 private UtilisateurDAO userDetailsDao;
+    @Autowired
+    public UtilisateurDAO userDetailsDao;
 
 
-	  @Transactional(readOnly = true)
-	  @Override
-	  public UserDetails loadUserByUsername(String usernameOrEmail){
-		
-	    Utilisateur user =  userDetailsDao.findUserByUsernameOrEmail(usernameOrEmail);
-	    
-	    UserBuilder builder = null;
-	    if (user != null) {
-	      
-	      builder = org.springframework.security.core.userdetails.User.withUsername(usernameOrEmail);
-	      builder.disabled(false);
-	      builder.password(user.getPassword());
-	      builder.roles("ADMIN");
-	      
-	      
-	    } else {
-	      throw new UsernameNotFoundException("User not found.");
-	    }
-	    return builder.build();
-	  }
-	}
+    @Transactional(readOnly = true)
+    @Override
+    public UserDetails loadUserByUsername(String usernameOrEmail) {
+
+        Utilisateur user = userDetailsDao.findUserByUsernameOrEmail(usernameOrEmail);
+
+        UserBuilder builder;
+        if (user != null) {
+
+            builder = org.springframework.security.core.userdetails.User.withUsername(usernameOrEmail);
+            builder.disabled(false);
+            builder.password(user.getPassword());
+            builder.roles("ADMIN");
+
+
+        } else {
+            throw new UsernameNotFoundException("User not found.");
+        }
+        return builder.build();
+    }
+}
 
 

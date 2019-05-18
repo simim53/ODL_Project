@@ -15,48 +15,52 @@ import odl_hibernate_model.Utilisateur;
 @Transactional
 public class UtilisateurServiceImpl implements UtilisateurService {
 
-	@Autowired
-	UtilisateurDAO userdao;
+    private final UtilisateurDAO userdao;
 
-	@Override
-	@Transactional(readOnly = true)
-	public List<Utilisateur> getAllUtilisateur() {
-		return userdao.getUtilisateurs();
-	}
+    @Autowired
+    public UtilisateurServiceImpl(UtilisateurDAO userdao) {
+        this.userdao = userdao;
+    }
 
-	@Override
-	@Transactional(readOnly = true)
-	public Utilisateur getUtilisateur(int id) {
-		return userdao.getUtilisateur(id);
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public List<Utilisateur> getAllUtilisateur() {
+        return userdao.getUtilisateurs();
+    }
 
-	@Override
-	@Transactional
-	public void addUtilisateur(Utilisateur utilisateur) {		
-		userdao.addUtilisateur(utilisateur);
+    @Override
+    @Transactional(readOnly = true)
+    public Utilisateur getUtilisateur(int id) {
+        return userdao.getUtilisateur(id);
+    }
 
-	}
+    @Override
+    @Transactional
+    public void addUtilisateur(Utilisateur utilisateur) {
+        userdao.addUtilisateur(utilisateur);
 
-	@Override
-	@Transactional
-	public void updateUtilisateur(Utilisateur utilisateur) {		
-		userdao.updateUtilisateur(utilisateur);
+    }
 
-	}
+    @Override
+    @Transactional
+    public void updateUtilisateur(Utilisateur utilisateur) {
+        userdao.updateUtilisateur(utilisateur);
 
-	@Override
-	@Transactional
-	public void deleteUtilisateur(Utilisateur utilisateur) {
-		userdao.deleteUtilisateur(utilisateur);
+    }
 
-	}
-	
-	@Override
-	@Transactional
-	public Utilisateur findUserByUsernameOrEmail(String loginOrEmail){
-		return userdao.findUserByUsernameOrEmail(loginOrEmail);
+    @Override
+    @Transactional
+    public void deleteUtilisateur(Utilisateur utilisateur) {
+        userdao.deleteUtilisateur(utilisateur);
 
-	}
-	
-	
+    }
+
+    @Override
+    @Transactional
+    public Utilisateur findUserByUsernameOrEmail(String loginOrEmail) {
+        return userdao.findUserByUsernameOrEmail(loginOrEmail);
+
+    }
+
+
 }

@@ -65,7 +65,7 @@ app.controller('identification', function($scope,$rootScope, $http) {
 //Controller valide session
 app.controller('myMenuController',function($scope,$rootScope, $http){
 
-    let getSessionInfo = function () {
+    var getSessionInfo = function () {
         $http.get('/odl_web/getSession')
             .then(function(data) {
                 $scope.user = data;
@@ -91,7 +91,7 @@ app.controller('Version', function($scope,$rootScope, $http) {
         	$scope.application = response.data.message;        
       }
       ,function errorCallback(response) {
-    	  console.log(data);
+    	  console.log(response);
 
       });
 });

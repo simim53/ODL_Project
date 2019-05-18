@@ -8,17 +8,17 @@ import odl_hibernate_model.Utilisateur;
 
 public interface UtilisateurService
 {
-    public List<Utilisateur> getAllUtilisateur();
+    List<Utilisateur> getAllUtilisateur();
     
-    public Utilisateur getUtilisateur(int id);
+    Utilisateur getUtilisateur(int id);
     
-    public void addUtilisateur (Utilisateur utilisateur);
+    void addUtilisateur(Utilisateur utilisateur);
     
-    public void updateUtilisateur (Utilisateur utilisateur);
+    void updateUtilisateur(Utilisateur utilisateur);
     
-    public void deleteUtilisateur (Utilisateur utilisateur);
+    void deleteUtilisateur(Utilisateur utilisateur);
     
-    public Utilisateur findUserByUsernameOrEmail(String loginOrEmail);
+    Utilisateur findUserByUsernameOrEmail(String loginOrEmail);
     
     
     
