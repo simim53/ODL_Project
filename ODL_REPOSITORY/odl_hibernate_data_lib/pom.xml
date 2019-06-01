@@ -5,10 +5,12 @@
 
 	<repositories>
 		<repository>
-			<id>codelds</id>
-			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+			<id>com.carbonfive.com.</id>
+			<name>com.carbonfive.com.</name>
+			<url>http://maven.icm.edu.pl/artifactory/repo/</url>
 		</repository>
 	</repositories>
+
 
 
 	<dependencies>
@@ -39,10 +41,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.oracle</groupId>
+			<groupId>com.oracle.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>12.2.0.1</version>
+			<version>18.3.0.0</version>
 		</dependency>
+
 
 
 		<dependency>
