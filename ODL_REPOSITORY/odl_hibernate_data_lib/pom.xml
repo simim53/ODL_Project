@@ -7,7 +7,7 @@
 		<repository>
 			<id>com.carbonfive.com.</id>
 			<name>com.carbonfive.com.</name>
-			<url>http://maven.icm.edu.pl/artifactory/repo/</url>
+			<url>http://maven.xwiki.org/externals/</url>
 		</repository>
 	</repositories>
 
@@ -43,8 +43,9 @@
 		<dependency>
 			<groupId>com.oracle.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>18.3.0.0</version>
+			<version>12.2.0.1</version>
 		</dependency>
+
 
 
 
