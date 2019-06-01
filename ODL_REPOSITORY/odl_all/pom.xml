@@ -17,7 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate.version>5.2.13.Final</hibernate.version>
 		<spring.version> 5.0.4.RELEASE</spring.version>
-		<mssqlserver.driver.version>5.1.4</mssqlserver.driver.version>
+		<ojdbc8.driver.version>12.2.0.1</ojdbc8.driver.version>
 		
 		<mssql-jdbc.version>6.2.2.jre8</mssql-jdbc.version>
 
