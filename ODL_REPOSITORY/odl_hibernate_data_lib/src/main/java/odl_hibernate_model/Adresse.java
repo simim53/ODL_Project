@@ -1,13 +1,6 @@
 package odl_hibernate_model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -48,8 +41,7 @@ public class Adresse implements java.io.Serializable {
 	@Column(name = "COMPLEMENT")
 	private String complement;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "USERID")
+	@OneToOne(mappedBy = "adresse")
 	@JsonBackReference
 	private Utilisateur utilisateur;
 

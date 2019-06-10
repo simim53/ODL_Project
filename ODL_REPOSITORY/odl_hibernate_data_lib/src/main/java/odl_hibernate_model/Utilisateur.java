@@ -2,14 +2,7 @@ package odl_hibernate_model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -62,7 +55,8 @@ public class Utilisateur implements java.io.Serializable {
 	@Column(name = "DATE_LASTCONNEXION")
 	private String dateLastCon;
 
-	@OneToOne(mappedBy = "utilisateur")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ADRESSEID", referencedColumnName = "ADRESSEID")
 	@JsonManagedReference
 	private Adresse adresse;
 

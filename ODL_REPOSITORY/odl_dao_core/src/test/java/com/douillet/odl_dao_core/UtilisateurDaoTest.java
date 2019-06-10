@@ -50,14 +50,14 @@ public class UtilisateurDaoTest {
 		Utilisateur userinbase = UtilisateurDAO.getUtilisateur(user.getUserID());
 
 		Assert.assertSame(user.getLogin(), userinbase.getLogin());
-		Assert.assertSame(user.getAdresse(), userinbase.getAdresse());
+		Assert.assertSame(user.getAdresse().getAdresseID(), userinbase.getAdresse().getAdresseID());
 		Assert.assertSame(user.getEmail(), userinbase.getEmail());
 
 	}
 
 	@Test
 	@Transactional
-	@Rollback(true)
+	@Rollback()
 	public void findUserByUsernameOrEmail() {
 
 		UtilisateurDAO.addUtilisateur(user);

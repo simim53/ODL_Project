@@ -5,14 +5,11 @@
 
 	<repositories>
 		<repository>
-			<id>com.carbonfive.com.</id>
-			<name>com.carbonfive.com.</name>
+			<id>my-repo1</id>
+			<name>your custom repo</name>
 			<url>http://maven.xwiki.org/externals/</url>
 		</repository>
 	</repositories>
-
-
-
 	<dependencies>
 
 		<dependency>
@@ -43,9 +40,8 @@
 		<dependency>
 			<groupId>com.oracle.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>${ojdbc8.driver.version}</version>
+			<version>12.2.0.1</version>
 		</dependency>
-
 
 
 

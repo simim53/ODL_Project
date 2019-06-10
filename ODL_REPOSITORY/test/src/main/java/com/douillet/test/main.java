@@ -1,6 +1,6 @@
 package com.douillet.test;
 
-/*
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -75,5 +75,3 @@ private static SessionFactory sessionFactory;
     
   }
 }
-
-*/

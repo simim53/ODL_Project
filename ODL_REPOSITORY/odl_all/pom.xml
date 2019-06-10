@@ -15,7 +15,7 @@
 		<global.version>0.0.8-SNAPSHOT</global.version>	
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<hibernate.version>5.2.13.Final</hibernate.version>
+		<hibernate.version>5.4.2.Final</hibernate.version>
 		<spring.version> 5.0.4.RELEASE</spring.version>
 		<ojdbc8.driver.version>12.2.0.1</ojdbc8.driver.version>
 		
