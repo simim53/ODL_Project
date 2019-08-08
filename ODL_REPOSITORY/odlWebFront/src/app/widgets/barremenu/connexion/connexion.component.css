@@ -1,0 +1,39 @@
+#formcon {
+  width: 240px;
+}
+#connex {
+  float: left;
+  list-style: none;
+}
+
+#btnseconnecter {
+  margin-left: 0px !important;
+  background-color: rgba(59, 59, 255, 0.68);
+  border-radius: 20px;
+  border-color: none !important;
+  color: white;
+
+}
+#btnseconnecter:hover {
+  background-color: rgba(20, 3, 97, 1.00) !important;
+}
+.input-group-text {
+  color: white;
+  background-color: #566fc6;
+}
+
+#connexionPan {
+  -webkit-box-shadow: 8px 8px 8px rgba(0,0,0,0.81);
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.81);
+  padding-bottom: 0px!important;
+}
+
+@media ( min-width : 768px) {
+
+  #formcon {
+    width: 240px;
+  }
+
+
+}
+

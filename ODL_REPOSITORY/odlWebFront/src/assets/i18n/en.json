@@ -1,0 +1,28 @@
+{
+	"barremenu": {
+		"accueil": "Home",
+		"autres": "Other",
+		"connexion": "Sign In",
+		"films": "Movies",
+		"inscription": "Register",
+		"livres": "Books",
+		"menu": "Menu :",
+		"musiques": "Music"
+	},
+	"connexion": {
+		"connecter": "Log in",
+		"identifiant": "Username / Email",
+		"mdpoublie": "Forgot your password ?",
+		"motdepasse": "Password"
+	},
+	"index": {
+		"bienvenue": "Welcome",
+		"creation_description": "Create a new library",
+		"creation_titre": "Creation",
+		"edition_description": "Edit one of your libraries",
+		"edition_titre": "Edition",
+		"gestion_description": "Manage your libraries, reviews, cards, loans ...",
+		"gestion_titre": "Management",
+		"resume": "Create, Edit, Share your Multimedia Libraries"
+	}
+}

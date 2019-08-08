@@ -1,0 +1,28 @@
+{
+	"barremenu": {
+		"accueil": "Accueil",
+		"autres": "Autres",
+		"connexion": "Connexion",
+		"films": "Films",
+		"inscription": "Inscription",
+		"livres": "Livres",
+		"menu": "Menu :",
+		"musiques": "Musiques"
+	},
+	"connexion": {
+		"connecter": "Se connecter",
+		"identifiant": "Identifiant / Email",
+		"mdpoublie": "Mot de passe oublié ?",
+		"motdepasse": "Mot de passe"
+	},
+	"index": {
+		"bienvenue": "Bienvenue",
+		"creation_description": "Créer une nouvelle bibliothèque",
+		"creation_titre": "Création",
+		"edition_description": "Éditer une de vos bibliothèques",
+		"edition_titre": "Édition",
+		"gestion_description": "Gérer vos bibliothèques, avis, fiches, prêts...",
+		"gestion_titre": "Gestion",
+		"resume": "Créez, Éditez, Partagez vos Bibliothèques Multimédia"
+	}
+}

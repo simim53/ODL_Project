@@ -1,0 +1,28 @@
+{
+	"barremenu": {
+		"accueil": "Bienvenida",
+		"autres": "Otro",
+		"connexion": "Acceder",
+		"films": "Cine",
+		"inscription": "Registro",
+		"livres": "Libros",
+		"menu": "Menú :",
+		"musiques": "Música"
+	},
+	"connexion": {
+		"connecter": "Conectarse",
+		"identifiant": "Login / Email",
+		"mdpoublie": "Contraseña olvidada ?",
+		"motdepasse": "Contraseña"
+	},
+	"index": {
+		"bienvenue": "Bienvenida",
+		"creation_description": "Crear una nueva biblioteca",
+		"creation_titre": "Creación",
+		"edition_description": "Edita una de tus bibliotecas.",
+		"edition_titre": "Edición",
+		"gestion_description": "Gestiona tus bibliotecas, reseñas, tarjetas, préstamos ...",
+		"gestion_titre": "Administración",
+		"resume": "Crea, Edita, comparte tus bibliotecas multimedia"
+	}
+}

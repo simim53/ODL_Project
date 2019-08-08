@@ -1,0 +1,62 @@
+
+<div>
+  <nav
+    class="navbar navbar-light navbar-expand-md navigation-clean-button">
+
+
+    <div class="container">
+      <a href="#" class="navbar-brand">{{'barremenu.menu'|translate}}</a>
+      <button data-toggle="collapse" data-target="#navcol-1"
+              class="navbar-toggler">
+        <span class="sr-only">Toggle navigation</span><span
+        class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav mr-auto">
+          <li role="presentation" class="nav-item" ><a routerLink="/accueil" routerLinkActive="active-route"
+                                                      class="nav-link" ng-class="getClass('/accueil')">{{'barremenu.accueil'|translate}}</a></li>
+          <li role="presentation" class="nav-item"><a routerLink="/film" routerLinkActive="active-route"
+                                                      class="nav-link" ng-class="getClass('/film')">{{'barremenu.films'|translate}}</a></li>
+          <li role="presentation" class="nav-item"><a href="/odl_web/construction"
+                                                      class="nav-link">{{'barremenu.musiques'|translate}}</a></li>
+          <li role="presentation" class="nav-item"><a href="/odl_web/construction"
+                                                      class="nav-link">{{'barremenu.livres'|translate}}</a></li>
+          <li class="dropdown"><a data-toggle="dropdown"
+                                  aria-expanded="false" href=""
+                                  class="dropdown-toggle nav-link dropdown-toggle">{{'barremenu.autres'|translate}}</a>
+            <div role="menu" class="dropdown-menu">
+              <a role="presentation" href="#" class="dropdown-item">element</a><a
+              role="presentation" href="#" class="dropdown-item">element</a><a
+              role="presentation" href="#" class="dropdown-item">element</a>
+            </div></li>
+        </ul>
+        <div style="text-align:center;">
+				<span class="navbar-text actions" style="text-align:center;">
+					<li class="dropdown order-1" id="connex" ><a
+            data-toggle="dropdown" aria-expanded="false" href=""
+            class="dropdown-toggle nav-link dropdown-toggle">{{'barremenu.connexion'|translate}}</a>
+
+						 <app-connexion></app-connexion>
+
+						</li> <a class="btn btn-light action-button" role="button" href=""
+                     style="background-color: #566fc6;" data-toggle="modal" data-target="#ModalInscription">{{'barremenu.inscription'|translate}}</a>
+				</span>
+        </div>
+      </div>
+    </div>
+
+    <div ngbDropdown class="d-inline-block float_left" placement="bottom-left">
+      <a class="nav-link dropdown-toggle" href="" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-fr"> </span> </a>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+        <button class="dropdown-item" (click)="useLanguage('fr')" ><span class="flag-icon flag-icon-fr"> </span>  Français</button>
+        <button class="dropdown-item" (click)="useLanguage('en')" ><span class="flag-icon flag-icon-gb"> </span>  English</button>
+        <button class="dropdown-item" (click)="useLanguage('es')" ><span class="flag-icon flag-icon-es"> </span>  Español</button>
+        <button class="dropdown-item" (click)="useLanguage('de')" ><span class="flag-icon flag-icon-de" > </span>  Deutsch</button>
+      </div>
+    </div>
+
+  </nav>
+
+</div>
+
+

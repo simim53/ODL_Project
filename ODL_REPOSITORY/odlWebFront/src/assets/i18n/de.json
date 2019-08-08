@@ -1,0 +1,28 @@
+{
+	"barremenu": {
+		"accueil": "Willkommen",
+		"autres": "Andere",
+		"connexion": "Einloggen",
+		"films": "Kino",
+		"inscription": "Anmeldung",
+		"livres": "Bücher",
+		"menu": "Menü :",
+		"musiques": "Musik"
+	},
+	"connexion": {
+		"connecter": "Einloggen",
+		"identifiant": "Benutzername / E-Mail",
+		"mdpoublie": "Passwort vergessen?",
+		"motdepasse": "Passwort"
+	},
+	"index": {
+		"bienvenue": "Willkommen",
+		"creation_description": "Erstellen Sie eine neue Bibliothek",
+		"creation_titre": "Schaffung",
+		"edition_description": "Bearbeiten Sie eine Ihrer Bibliotheken",
+		"edition_titre": "Ausgabe",
+		"gestion_description": "Verwalten Sie Ihre Bibliotheken, Rezensionen, Karten, Ausleihen ...",
+		"gestion_titre": "Management",
+		"resume": "Erstellen, Bearbeiten und teilen Sie Ihre Multimedia-Bibliotheken"
+	}
+}

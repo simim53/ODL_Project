@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<ul class="dropdown-menu dropdown-menu-right mt-1" id="connexionPan">
+  <!-- ng-hide="hideconn"-->
+  <li class="p-3" id="formcon">
+
+    <form role="form" ng-submit="onLogin()" ng-controller="identification">
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+          </div>
+          <input id="loginInput" placeholder="{{'connexion.identifiant'|translate}}"
+                 class="form-control form-control-sm" type="text" name="username"
+                 required='true'> <!-- </input>   ng-model="credentials.username"-->
+        </div>
+
+      </div>
+      <div class="form-group">
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-key"></i></span>
+          </div>
+          <input id="passwordInput" placeholder="{{'connexion.motdepasse'|translate}}"
+                 class="form-control form-control-sm" type="password" required='true'>
+          <!-- </input> ng-model="credentials.password"-->
+        </div>
+
+
+      </div>
+      <div class="form-group" style="text-align: center;">
+        <button class="btn btn-light action-button" role="button"
+                style="background-color: #566fc6;" id="btnseconnecter"
+                type="submit">{{'connexion.connecter'|translate}}</button>
+      </div>
+      <div class="form-group text-xs-center" style="text-align: center;">
+        <small><a href="#">{{'connexion.mdpoublie'|translate}}</a></small>
+      </div>
+
+    </form>
+
+  </li>
+<!--
+  <li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
+-->
+
+</ul>
+
+</html>
